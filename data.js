@@ -533,52 +533,62 @@ window.EXPLORER_DATA = {
     {
       "title": "Accuracy",
       "why": "AI can produce confident but wrong outputs.",
-      "action": "Require verification against original sources."
+      "action": "Checking AI outputs against original sources helps prevent errors from entering regulatory work.",
+      "category": "Evidence & accuracy"
     },
     {
       "title": "Confidentiality",
       "why": "Regulators handle sensitive, commercial, legal and personal data.",
-      "action": "Ban sensitive data in public AI tools and use secure systems."
+      "action": "Approved, secure systems help protect confidential information. Sensitive material should stay out of public AI tools.",
+      "category": "Information & trust"
     },
     {
       "title": "Record integrity",
       "why": "Decisions must be based on the official record.",
-      "action": "Limit AI use in proceedings to approved documents and sources."
+      "action": "Using approved documents and sources helps keep regulatory proceedings grounded in the official record.",
+      "category": "Evidence & accuracy"
     },
     {
       "title": "Bias",
       "why": "AI can reproduce bias from data, documents or system design.",
-      "action": "Test tools regularly and review outputs for unequal impacts."
+      "action": "Regular testing and human review can reveal unequal impacts across people and groups.",
+      "category": "People & fairness"
     },
     {
       "title": "Transparency",
       "why": "Stakeholders need to know how information was used.",
-      "action": "Disclose meaningful AI use where it affects formal outputs."
+      "action": "Explaining significant uses of AI helps stakeholders understand how formal outputs were prepared.",
+      "category": "Information & trust"
     },
     {
       "title": "Explainability",
       "why": "Regulators need to justify decisions.",
-      "action": "Use AI for support, not final reasoning or decision-making."
+      "action": "AI can support analysis, while people remain responsible for the reasoning behind a decision.",
+      "category": "Evidence & accuracy"
     },
     {
       "title": "Over-reliance",
       "why": "Staff may trust summaries instead of reading source material.",
-      "action": "Keep human review mandatory for substantive work."
+      "action": "Human review of substantive work helps ensure that summaries do not replace examination of the evidence.",
+      "category": "People & fairness"
     },
     {
       "title": "Procurement risk",
       "why": "Vendors may overstate what AI tools can do.",
-      "action": "Develop AI procurement checklists and evaluation criteria."
+      "action": "Clear evaluation criteria help regulators assess supplier claims and compare tools before procurement.",
+      "category": "Skills & suppliers"
     },
     {
       "title": "Capacity gap",
       "why": "Regulators may not have AI expertise internally.",
-      "action": "Build basic AI literacy and partner with technical experts."
+      "action": "Staff training and access to technical expertise help regulators understand a tool’s capabilities and limits.",
+      "category": "Skills & suppliers"
     },
     {
       "title": "Public trust",
       "why": "Poorly governed AI use can damage institutional credibility.",
-      "action": "Start with low-risk use cases and clear guardrails."
+      "action": "Starting with lower-risk applications and clear safeguards can help build confidence in how AI is used.",
+      "category": "Information & trust"
     }
   ],
   "dataRevision": "2026-10-02-research",
