@@ -1,6 +1,5 @@
 'use strict';
 const base=window.EXPLORER_DATA;
-// Restore category assignments when missing from the dataset.
 const riskCategoryByTitle = {
   "Accuracy": "Evidence & accuracy",
   "Record integrity": "Evidence & accuracy",
