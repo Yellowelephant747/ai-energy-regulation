@@ -96,3 +96,333 @@ a,summary{color:var(--accent)}a:hover{color:var(--accent)}
  .map-mode #map-surface,.map-mode:has([data-view="risks"][aria-current]) #map-surface{top:max(calc(44vh + 20px),290px)}
  .map-mode .section-heading{bottom:10px}
 }
+/* Keep the sidebar consistent in mind-map and cards views. */
+.catalog-layout {
+  background: var(--bg);
+}
+
+.catalog-layout main {
+  max-width: none;
+  padding: 0;
+}
+
+.catalog-layout .explorer-sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 18px;
+  top: 18px;
+  bottom: 76px;
+  width: 345px;
+  z-index: 5;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.catalog-layout .explorer-sidebar header,
+.catalog-layout .explorer-sidebar .intro,
+.catalog-layout .explorer-sidebar .view-switch,
+.catalog-layout .explorer-sidebar nav,
+.catalog-layout .explorer-sidebar #filter-panel {
+  position: static;
+  inset: auto;
+  width: auto;
+  flex-shrink: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.catalog-layout .explorer-sidebar header {
+  padding: 14px;
+  border: 0;
+  gap: 7px;
+}
+
+.catalog-layout .brand {
+  gap: 9px;
+  min-width: 0;
+}
+
+.catalog-layout .rap-logo {
+  width: 105px;
+}
+
+.catalog-layout .brand > span {
+  display: block;
+  padding-left: 9px;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.catalog-layout #theme-toggle {
+  font-size: 10px;
+  padding: 7px;
+}
+
+.catalog-layout .explorer-sidebar .intro {
+  display: block;
+  padding: 12px 16px 18px;
+}
+
+.catalog-layout h1 {
+  font-size: 23px;
+  letter-spacing: -.8px;
+}
+
+.catalog-layout h1 br {
+  display: none;
+}
+
+.catalog-layout h1 span::before {
+  content: " ";
+}
+
+.catalog-layout .intro .eyebrow {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.catalog-layout .intro p:not(.eyebrow),
+.catalog-layout .overview {
+  display: none;
+}
+
+.catalog-layout .explorer-sidebar .view-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin: 0 14px 14px;
+  padding: 6px;
+  border-radius: 7px;
+}
+
+.catalog-layout .view-label {
+  grid-column: 1 / -1;
+  margin: 3px 5px 4px;
+}
+
+.catalog-layout .explorer-sidebar .view-switch button {
+  max-width: none;
+  min-height: 42px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.catalog-layout .explorer-sidebar nav {
+  display: grid;
+  grid-template-columns: .8fr 1.1fr 1.2fr;
+  gap: 6px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.catalog-layout .explorer-sidebar nav button {
+  padding: 12px 3px;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.catalog-layout nav span {
+  display: none;
+}
+
+.catalog-layout .explorer-sidebar #filter-panel {
+  flex: 1;
+  min-height: 0;
+  max-height: none;
+  overflow: auto;
+  padding: 18px 16px;
+  border: 0;
+}
+
+.catalog-layout .search-row {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catalog-layout .search-label {
+  flex-basis: 100%;
+}
+
+.catalog-layout .search-row button {
+  padding: 8px 11px;
+  font-size: 12px;
+}
+
+.catalog-layout .filters {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.catalog-layout .filters label:first-child,
+.catalog-layout .filters label:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+.catalog-layout .explorer-sidebar label {
+  font-size: 12px;
+}
+
+.catalog-layout .explorer-sidebar input,
+.catalog-layout .explorer-sidebar select {
+  font-size: 14px;
+}
+
+.catalog-layout .explorer-sidebar #message:not(:empty) {
+  position: static;
+  inset: auto;
+  max-width: none;
+  margin: 0 14px 10px;
+  font-size: 12px;
+}
+
+/* Cards occupy the space to the right of the sidebar. */
+.catalog-layout:not(.map-mode) main > section {
+  margin-left: 380px;
+  padding: 24px 24px 80px;
+}
+
+.catalog-layout:not(.map-mode) .grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Keep the view title and result count in the same position. */
+.catalog-layout .section-heading {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  width: 345px;
+  z-index: 6;
+  margin: 0;
+  padding: 15px 18px;
+  gap: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0 0 9px 9px;
+}
+
+.catalog-layout .section-heading h2 {
+  font-size: 14px;
+}
+
+.catalog-layout .section-heading p {
+  display: none;
+}
+
+.catalog-layout #count {
+  font-size: 12px;
+}
+
+.catalog-layout footer {
+  position: fixed;
+  right: 12px;
+  bottom: 0;
+  max-width: calc(100vw - 400px);
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--bg);
+  font-size: 10px;
+}
+
+.catalog-layout footer p {
+  margin: 3px;
+}
+
+.catalog-layout footer p + p {
+  display: none;
+}
+
+@media (min-width: 1500px) {
+  .catalog-layout:not(.map-mode) .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1000px) {
+  .catalog-layout:not(.map-mode) .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* On smaller screens, both views use the same top panel. */
+@media (max-width: 760px) {
+  .catalog-layout .explorer-sidebar {
+    top: 10px;
+    left: 10px;
+    bottom: auto;
+    width: calc(100% - 20px);
+    height: 44vh;
+    min-height: 270px;
+  }
+
+  .catalog-layout .explorer-sidebar header {
+    padding: 8px 12px;
+  }
+
+  .catalog-layout .rap-logo {
+    width: 95px;
+  }
+
+  .catalog-layout .explorer-sidebar .intro {
+    padding: 4px 14px 10px;
+  }
+
+  .catalog-layout h1 {
+    font-size: 19px;
+  }
+
+  .catalog-layout .intro .eyebrow {
+    display: none;
+  }
+
+  .catalog-layout .explorer-sidebar .view-switch {
+    display: flex;
+    margin: 0 12px 6px;
+    padding: 4px;
+  }
+
+  .catalog-layout .view-label {
+    margin: 0 4px;
+  }
+
+  .catalog-layout .explorer-sidebar .view-switch button {
+    min-height: 36px;
+    padding: 7px;
+    font-size: 12px;
+  }
+
+  .catalog-layout .explorer-sidebar nav button {
+    padding: 7px 3px;
+  }
+
+  .catalog-layout .explorer-sidebar #filter-panel {
+    padding: 10px 14px;
+  }
+
+  .catalog-layout .filters label:first-child,
+  .catalog-layout .filters label:nth-child(2) {
+    grid-column: auto;
+  }
+
+  .catalog-layout:not(.map-mode) main > section {
+    margin-left: 0;
+    padding: max(calc(44vh + 20px), 290px) 14px 80px;
+  }
+
+  .catalog-layout .section-heading {
+    left: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    padding: 10px 14px;
+  }
+
+  .catalog-layout footer {
+    display: none;
+  }
+}
