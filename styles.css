@@ -4,3 +4,66 @@
 @media(max-width:760px){.map-mode header{left:10px;top:10px;width:calc(100% - 20px);padding:8px 12px}.map-mode .brand>span{display:block}.map-mode .intro{left:10px;top:73px;width:calc(100% - 20px);padding:10px 14px}.map-mode .intro .eyebrow{display:none}.map-mode h1{font-size:20px}.map-mode nav{left:10px;top:116px;width:calc(100% - 20px);padding:0 14px}.map-mode nav button{font-size:12px;flex:initial}.map-mode .view-switch,.map-mode:has([data-view="risks"][aria-current]) .view-switch{top:163px;left:24px}.map-mode #filter-panel{left:10px;top:200px;bottom:auto;max-height:135px;width:calc(100% - 20px);padding:10px 14px;border-radius:0 0 8px 8px;border-bottom:1px solid #b8cbd0}.map-mode .search-row{gap:5px}.map-mode .search-label{flex-basis:60%}.map-mode .filters{grid-template-columns:1fr 1fr}.map-mode .filters label:first-child,.map-mode .filters label:nth-child(2){grid-column:auto}.map-mode .section-heading{left:10px;bottom:10px;width:calc(100% - 20px);padding:10px 14px}.map-mode #map-surface{inset:342px 0 58px}.map-mode footer{display:none}.map-tools{top:5px;right:10px}.map-tools button{font-size:12px;padding:7px 10px}.map-help{bottom:25px;font-size:10px}.map-key{bottom:5px;font-size:10px}.map-mode #edit-notice{top:auto;bottom:60px;right:10px;width:calc(100% - 20px);font-size:12px}.map-mode #message:not(:empty){bottom:190px;right:10px;max-width:calc(100% - 20px)}.map-mode:has([data-view="risks"][aria-current]) #map-surface{top:206px}}
 @media(prefers-reduced-motion:no-preference){.map-node{transition:box-shadow .15s,background .15s}}
 .category-description{max-width:950px;margin:-4px 0 20px;line-height:1.65;color:#47616f;font-size:16px}.editorial-note{color:#5b737e;font-size:12px!important;font-style:italic}#area-explainer{border-bottom:1px solid #c8d8db;padding:0 0 15px;margin:0 0 18px}#area-explainer h3{font-size:18px;margin:5px 0 10px}#area-description{font-size:14px;line-height:1.6;color:#365766;margin:8px 0 12px}#area-explainer .eyebrow{font-size:10px;margin:0}#area-back{font-size:12px;padding:7px 11px}.area-hint{font-size:12px;line-height:1.4;color:#5b717c}.map-mode #filter-panel{scrollbar-gutter:stable}.map-node:focus-visible{z-index:2}.map-mode #edit-notice{max-height:180px;overflow:auto}
+
+/* RAP-inspired blue appearance; dark is the default. */
+:root{color-scheme:dark;--bg:#091b2b;--panel:#102a40;--control:#17374f;--hover:#234961;--soft:#183b54;--input:#0b2235;--text:#e5f1f8;--muted:#afc7d8;--border:#36566e;--dots:#29465b;--accent:#8ac8eb;--on-accent:#082339}
+:root[data-theme="light"]{color-scheme:light;--bg:#edf4f9;--panel:#ffffff;--control:#e7f1f8;--hover:#d4e8f5;--soft:#e0eff8;--input:#ffffff;--text:#16374e;--muted:#49677c;--border:#aac6d9;--dots:#bed3e2;--accent:#165c85;--on-accent:#ffffff}
+:root{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:var(--text);background:var(--bg);--navy:var(--accent);--teal:var(--accent);--line:var(--border)}
+body,.map-mode{background:var(--bg)}
+header,.map-mode header{background:var(--panel);border-color:var(--border);border-top-color:var(--accent)}
+.brand>strong,h1,h2,h3,h4,.overview strong{color:var(--accent)}
+h1{letter-spacing:-1px}h1 span{color:var(--accent)}
+button{background:var(--control);color:var(--text);border-color:var(--border);border-radius:4px}
+button:hover{background:var(--hover);border-color:var(--accent)}
+button.primary,.view-switch button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:var(--accent)}
+.brand small,.intro p:not(.eyebrow),.overview div,.section-heading p,.category-heading span,.card .meta,.regulator,footer,dialog p,.category-description,.editorial-note,#area-description,.area-hint,nav span{color:var(--muted)}
+nav{border-bottom-color:var(--border)}nav button{background:transparent}nav button:hover{background:var(--soft)}
+#filter-panel,.card,dialog,#record-dialog,.map-mode .intro,.map-mode nav,.map-mode #filter-panel,.map-mode .section-heading{background:var(--panel);color:var(--text);border-color:var(--border)}
+input,select,textarea{background:var(--input);color:var(--text);border-color:var(--border)}input::placeholder{color:var(--muted)}
+a,summary{color:var(--accent)}a:hover{color:var(--accent)}
+.badge{background:var(--soft);color:var(--text)}
+.badge[data-status="Developing"],.badge[data-status="Pilot/Experimental"]{background:#3c331c;color:#f0d88c}
+.badge[data-status="Not established"],.badge[data-status="Adjacent/Research"],.badge[data-status="Governance"]{background:#273039;color:#c0d9ed}
+.risk-box,.principle,#message{background:var(--soft);color:var(--text)}
+.notice{background:#342e19;color:#f4e4b0;border-color:#dfbf63}.delete{color:#ffaaaa}
+.empty,#area-explainer{border-color:var(--border)}dialog::backdrop{background:#050803c9}
+.map-mode #map-surface{background-color:var(--bg);background-image:radial-gradient(var(--dots) 1px,transparent 1px)}
+.map-tools button{background:var(--control)}.map-tools button:hover{background:var(--hover)}
+.map-help,.map-key{color:var(--muted)}.key-root{background:var(--accent)}.key-category{background:var(--accent)}.key-record{background:var(--panel);border-color:var(--accent)}
+.map-node{background:var(--panel);color:var(--text);border-color:var(--border);box-shadow:0 4px 18px #0005}
+.map-node small{color:var(--muted)}
+.map-node.root,.map-node.root:hover{background:var(--soft);color:var(--accent);border-color:var(--accent)}
+.map-node.root small{color:var(--text)}
+.map-node.category{background:var(--soft);color:var(--text)}
+.map-node.record{background:var(--panel)}
+.map-node:hover{background:var(--hover);box-shadow:0 0 0 1px var(--accent),0 6px 24px #0007}
+#map-nodes .empty{background:var(--panel);color:var(--text)}
+.map-mode footer{background:var(--bg)}.map-mode .brand>span{font-size:11px}.map-mode h1{font-size:23px}.map-mode nav{gap:10px}.map-mode nav button{font-size:11px}.map-mode #edit-toggle{font-size:11px;padding:7px}
+::selection{background:var(--accent);color:var(--on-accent)}
+@media(max-width:760px){.map-mode h1{font-size:19px}}
+.map-mode h1 span::before{content:' '}
+
+#theme-toggle{white-space:nowrap;font-size:13px}
+.map-mode #theme-toggle{font-size:11px;padding:8px}
+.map-mode .brand{gap:10px}.map-mode .brand>span{font-size:10px}
+:root[data-theme="light"] .badge[data-status="Developing"],:root[data-theme="light"] .badge[data-status="Pilot/Experimental"]{background:#fff0d5;color:#785006}
+:root[data-theme="light"] .badge[data-status="Not established"],:root[data-theme="light"] .badge[data-status="Adjacent/Research"],:root[data-theme="light"] .badge[data-status="Governance"]{background:#eaf0f7;color:#405b75}
+
+/* Supplied RAP brand assets and category colours. */
+:root{--bg:#0c1930;--panel:#122b43;--accent:#8ac8eb}
+:root[data-theme="light"]{--bg:#f0f5f8;--panel:#fff;--accent:#004279}
+.rap-logo{display:block;width:150px;height:auto;flex-shrink:0}
+.logo-light{display:none}
+[data-theme="light"] .logo-dark{display:none}
+[data-theme="light"] .logo-light{display:block}
+.map-mode .rap-logo{width:105px}
+.map-mode .brand{gap:9px;min-width:0}
+.map-mode .brand>span{padding-left:9px;font-size:9px;line-height:1.5}
+.map-mode header{gap:7px}
+.map-mode #theme-toggle{font-size:10px;padding:7px}
+.map-node.category{border:3px solid var(--branch);background:color-mix(in srgb,var(--branch) 17%,var(--panel));color:var(--text)}
+.map-node.record{border-left:6px solid var(--branch)}
+.card[style*="--branch"]{border-top-color:var(--branch);border-top-width:4px}
+.category-heading::before{content:'';width:12px;height:12px;flex-shrink:0;background:var(--branch);border-radius:3px;border:1px solid var(--border)}
+@media(max-width:650px){header .rap-logo{width:120px}.map-mode .rap-logo{width:95px}}
