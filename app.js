@@ -1,5 +1,23 @@
 'use strict';
 const base=window.EXPLORER_DATA;
+// Restore category assignments when missing from the dataset.
+const riskCategoryByTitle = {
+  "Accuracy": "Evidence & accuracy",
+  "Record integrity": "Evidence & accuracy",
+  "Explainability": "Evidence & accuracy",
+  "Confidentiality": "Information & trust",
+  "Transparency": "Information & trust",
+  "Public trust": "Information & trust",
+  "Bias": "People & fairness",
+  "Over-reliance": "People & fairness",
+  "Procurement risk": "Skills & suppliers",
+  "Capacity gap": "Skills & suppliers"
+};
+
+base.risks = base.risks.map(risk => ({
+  ...risk,
+  category: risk.category || riskCategoryByTitle[risk.title]
+}));
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const statuses=['Operational','Developing','Pilot/Experimental','Governance','Adjacent/Research','Not established'];
