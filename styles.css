@@ -5,39 +5,65 @@
 @media(prefers-reduced-motion:no-preference){.map-node{transition:box-shadow .15s,background .15s}}
 .category-description{max-width:950px;margin:-4px 0 20px;line-height:1.65;color:#47616f;font-size:16px}.editorial-note{color:#5b737e;font-size:12px!important;font-style:italic}#area-explainer{border-bottom:1px solid #c8d8db;padding:0 0 15px;margin:0 0 18px}#area-explainer h3{font-size:18px;margin:5px 0 10px}#area-description{font-size:14px;line-height:1.6;color:#365766;margin:8px 0 12px}#area-explainer .eyebrow{font-size:10px;margin:0}#area-back{font-size:12px;padding:7px 11px}.area-hint{font-size:12px;line-height:1.4;color:#5b717c}.map-mode #filter-panel{scrollbar-gutter:stable}.map-node:focus-visible{z-index:2}.map-mode #edit-notice{max-height:180px;overflow:auto}
 
-/* Hacker-inspired theme. Layout and interactive behavior remain in the base styles above. */
-:root{color-scheme:dark;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:#e2e8dc;background:#151713;--navy:#b5e853;--teal:#b5e853;--line:#394231}
-body,.map-mode{background:#151713}
-header,.map-mode header{background:#1b1f18;border-color:#394231;border-top-color:#b5e853}
-.brand>strong,h1,h2,h3,h4,.overview strong{color:#b5e853}
-h1{letter-spacing:-1px}h1 span{color:#d2f69b}
-button{background:#22291d;color:#d6efb5;border-color:#4b5a3c;border-radius:4px}
-button:hover{background:#303c25;border-color:#b5e853}
-button.primary,.view-switch button[aria-pressed="true"]{background:#b5e853;color:#17200e;border-color:#b5e853}
-button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:#d8ff8d}
-.brand small,.intro p:not(.eyebrow),.overview div,.section-heading p,.category-heading span,.card .meta,.regulator,footer,dialog p,.category-description,.editorial-note,#area-description,.area-hint,nav span{color:#abb8a0}
-nav{border-bottom-color:#394231}nav button{background:transparent}nav button:hover{background:#26301f}
-#filter-panel,.card,dialog,#record-dialog,.map-mode .intro,.map-mode nav,.map-mode #filter-panel,.map-mode .section-heading{background:#1b1f18;color:#e2e8dc;border-color:#394231}
-input,select,textarea{background:#10140e;color:#e2e8dc;border-color:#4b5a3c}input::placeholder{color:#929f87}
-a,summary{color:#b5e853}a:hover{color:#deffab}
-.badge{background:#283a1d;color:#cfefaa}
+/* RAP-inspired blue appearance; dark is the default. */
+:root{color-scheme:dark;--bg:#091b2b;--panel:#102a40;--control:#17374f;--hover:#234961;--soft:#183b54;--input:#0b2235;--text:#e5f1f8;--muted:#afc7d8;--border:#36566e;--dots:#29465b;--accent:#8ac8eb;--on-accent:#082339}
+:root[data-theme="light"]{color-scheme:light;--bg:#edf4f9;--panel:#ffffff;--control:#e7f1f8;--hover:#d4e8f5;--soft:#e0eff8;--input:#ffffff;--text:#16374e;--muted:#49677c;--border:#aac6d9;--dots:#bed3e2;--accent:#165c85;--on-accent:#ffffff}
+:root{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:var(--text);background:var(--bg);--navy:var(--accent);--teal:var(--accent);--line:var(--border)}
+body,.map-mode{background:var(--bg)}
+header,.map-mode header{background:var(--panel);border-color:var(--border);border-top-color:var(--accent)}
+.brand>strong,h1,h2,h3,h4,.overview strong{color:var(--accent)}
+h1{letter-spacing:-1px}h1 span{color:var(--accent)}
+button{background:var(--control);color:var(--text);border-color:var(--border);border-radius:4px}
+button:hover{background:var(--hover);border-color:var(--accent)}
+button.primary,.view-switch button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:var(--accent)}
+.brand small,.intro p:not(.eyebrow),.overview div,.section-heading p,.category-heading span,.card .meta,.regulator,footer,dialog p,.category-description,.editorial-note,#area-description,.area-hint,nav span{color:var(--muted)}
+nav{border-bottom-color:var(--border)}nav button{background:transparent}nav button:hover{background:var(--soft)}
+#filter-panel,.card,dialog,#record-dialog,.map-mode .intro,.map-mode nav,.map-mode #filter-panel,.map-mode .section-heading{background:var(--panel);color:var(--text);border-color:var(--border)}
+input,select,textarea{background:var(--input);color:var(--text);border-color:var(--border)}input::placeholder{color:var(--muted)}
+a,summary{color:var(--accent)}a:hover{color:var(--accent)}
+.badge{background:var(--soft);color:var(--text)}
 .badge[data-status="Developing"],.badge[data-status="Pilot/Experimental"]{background:#3c331c;color:#f0d88c}
 .badge[data-status="Not established"],.badge[data-status="Adjacent/Research"],.badge[data-status="Governance"]{background:#273039;color:#c0d9ed}
-.risk-box,.principle,#message{background:#26301f;color:#dce8d0}
+.risk-box,.principle,#message{background:var(--soft);color:var(--text)}
 .notice{background:#342e19;color:#f4e4b0;border-color:#dfbf63}.delete{color:#ffaaaa}
-.empty,#area-explainer{border-color:#4b5a3c}dialog::backdrop{background:#050803c9}
-.map-mode #map-surface{background-color:#151713;background-image:radial-gradient(#35402c 1px,transparent 1px)}
-.map-tools button{background:#22291d}.map-tools button:hover{background:#303c25}
-.map-help,.map-key{color:#afbea2}.key-root{background:#b5e853}.key-category{background:#729b45}.key-record{background:#20271b;border-color:#b5e853}
-.map-node{background:#20271b;color:#e2e8dc;border-color:#586b43;box-shadow:0 4px 18px #0005}
-.map-node small{color:#b2c0a5}
-.map-node.root,.map-node.root:hover{background:#24351a;color:#c6f77d;border-color:#789f46}
-.map-node.root small{color:#d1e6b8}
-.map-node.category{background:#253020;color:#e0efcf}
-.map-node.record{background:#1c2318}
-.map-node:hover{background:#303e25;box-shadow:0 0 0 1px #b5e853,0 6px 24px #0007}
-#map-nodes .empty{background:#1b1f18;color:#e2e8dc}
-.map-mode footer{background:#151713e8}.map-mode .brand>span{font-size:11px}.map-mode h1{font-size:23px}.map-mode nav{gap:10px}.map-mode nav button{font-size:11px}.map-mode #edit-toggle{font-size:11px;padding:7px}
-::selection{background:#b5e853;color:#151713}
+.empty,#area-explainer{border-color:var(--border)}dialog::backdrop{background:#050803c9}
+.map-mode #map-surface{background-color:var(--bg);background-image:radial-gradient(var(--dots) 1px,transparent 1px)}
+.map-tools button{background:var(--control)}.map-tools button:hover{background:var(--hover)}
+.map-help,.map-key{color:var(--muted)}.key-root{background:var(--accent)}.key-category{background:var(--accent)}.key-record{background:var(--panel);border-color:var(--accent)}
+.map-node{background:var(--panel);color:var(--text);border-color:var(--border);box-shadow:0 4px 18px #0005}
+.map-node small{color:var(--muted)}
+.map-node.root,.map-node.root:hover{background:var(--soft);color:var(--accent);border-color:var(--accent)}
+.map-node.root small{color:var(--text)}
+.map-node.category{background:var(--soft);color:var(--text)}
+.map-node.record{background:var(--panel)}
+.map-node:hover{background:var(--hover);box-shadow:0 0 0 1px var(--accent),0 6px 24px #0007}
+#map-nodes .empty{background:var(--panel);color:var(--text)}
+.map-mode footer{background:var(--bg)}.map-mode .brand>span{font-size:11px}.map-mode h1{font-size:23px}.map-mode nav{gap:10px}.map-mode nav button{font-size:11px}.map-mode #edit-toggle{font-size:11px;padding:7px}
+::selection{background:var(--accent);color:var(--on-accent)}
 @media(max-width:760px){.map-mode h1{font-size:19px}}
 .map-mode h1 span::before{content:' '}
+
+#theme-toggle{white-space:nowrap;font-size:13px}
+.map-mode #theme-toggle{font-size:11px;padding:8px}
+.map-mode .brand{gap:10px}.map-mode .brand>span{font-size:10px}
+:root[data-theme="light"] .badge[data-status="Developing"],:root[data-theme="light"] .badge[data-status="Pilot/Experimental"]{background:#fff0d5;color:#785006}
+:root[data-theme="light"] .badge[data-status="Not established"],:root[data-theme="light"] .badge[data-status="Adjacent/Research"],:root[data-theme="light"] .badge[data-status="Governance"]{background:#eaf0f7;color:#405b75}
+
+/* Supplied RAP brand assets and category colours. */
+:root{--bg:#0c1930;--panel:#122b43;--accent:#8ac8eb}
+:root[data-theme="light"]{--bg:#f0f5f8;--panel:#fff;--accent:#004279}
+.rap-logo{display:block;width:150px;height:auto;flex-shrink:0}
+.logo-light{display:none}
+[data-theme="light"] .logo-dark{display:none}
+[data-theme="light"] .logo-light{display:block}
+.map-mode .rap-logo{width:105px}
+.map-mode .brand{gap:9px;min-width:0}
+.map-mode .brand>span{padding-left:9px;font-size:9px;line-height:1.5}
+.map-mode header{gap:7px}
+.map-mode #theme-toggle{font-size:10px;padding:7px}
+.map-node.category{border:3px solid var(--branch);background:color-mix(in srgb,var(--branch) 17%,var(--panel));color:var(--text)}
+.map-node.record{border-left:6px solid var(--branch)}
+.card[style*="--branch"]{border-top-color:var(--branch);border-top-width:4px}
+.category-heading::before{content:'';width:12px;height:12px;flex-shrink:0;background:var(--branch);border-radius:3px;border:1px solid var(--border)}
+@media(max-width:650px){header .rap-logo{width:120px}.map-mode .rap-logo{width:95px}}
