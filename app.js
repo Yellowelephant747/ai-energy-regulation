@@ -55,3 +55,208 @@ $('#map-nodes').addEventListener('focusin',event=>{const b=event.target.closest(
 window.addEventListener('resize',()=>{if(presentation==='map'){if(focusedArea)focusArea(focusedArea);else fitMap();}});
 $('#map-viewport').addEventListener('wheel',event=>{if(event.ctrlKey||event.metaKey)return;event.preventDefault();const rect=$('#map-viewport').getBoundingClientRect();const units=event.deltaMode===1?16:event.deltaMode===2?rect.height:1;const delta=Math.max(-160,Math.min(160,event.deltaY*units));zoomMap(Math.exp(-delta*.0025),{x:event.clientX-rect.left,y:event.clientY-rect.top});},{passive:false});
 populate();render();
+
+
+// Can also be pasted at the END of the existing app.js, after populate();render();
+(() => {
+  'use strict';
+  if (window.catalogGovernanceInstalled) return;
+  const nav = document.querySelector('nav[aria-label="Explorer views"]') || document.querySelector('nav:has([data-view="examples"])');
+  if (!nav || typeof renderCards !== 'function' || typeof drawMap !== 'function') {
+    throw new Error('Governance extension requires the current catalog app.js and Explorer views navigation.');
+  }
+  window.catalogGovernanceInstalled = true;
+  const policies = () => base.governance || [];
+  const isGovernance = () => view === 'governance';
+  const counted = (count, noun, plural = noun + 's') => count + ' ' + (count === 1 ? noun : plural);
+  const dateElement = document.querySelector('footer p:first-child strong');
+  const reviewed = new Date((base.reviewedDate || '') + 'T00:00:00Z');
+  if (dateElement && !Number.isNaN(reviewed.getTime())) {
+    dateElement.textContent = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(reviewed);
+  }
+  const originalRenderCards = renderCards;
+  const originalDrawMap = drawMap;
+  const originalShowArea = showArea;
+  const originalMapClick = $('#map-nodes').onclick;
+  const categoryLabel = $('#category').closest('label');
+  const categoryText = [...categoryLabel.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+  const originalCategoryText = categoryText?.textContent;
+  let lastView = null;
+
+  nav.dataset.governanceNav = 'true';
+  const risksButton = nav.querySelector('[data-view="risks"]');
+  if (risksButton) risksButton.textContent = 'Risks & safeguards';
+  const governanceButton = document.createElement('button');
+  governanceButton.type = 'button';
+  governanceButton.dataset.view = 'governance';
+  governanceButton.textContent = 'AI governance';
+  nav.append(governanceButton);
+  governanceButton.addEventListener('click', () => { view = 'governance'; render(); });
+
+  const scopeLabel = document.createElement('label');
+  scopeLabel.hidden = true;
+  scopeLabel.textContent = 'Policy applies to';
+  const scopeSelect = document.createElement('select');
+  scopeSelect.id = 'governance-scope';
+  scopeSelect.setAttribute('aria-label', 'Policy applies to');
+  scopeLabel.append(scopeSelect);
+  $('#filter-panel .filters').append(scopeLabel);
+  scopeSelect.addEventListener('change', render);
+  const style = document.createElement('style');
+  style.textContent = `
+    nav[data-governance-nav]{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:4px}
+    nav[data-governance-nav] button{min-width:0;white-space:normal}
+    .governance-card ul{padding-left:20px;line-height:1.55;font-size:14px}
+    .governance-card li{margin-bottom:8px}
+  `;
+  document.head.append(style);
+
+  function setFilters() {
+    const governing = isGovernance();
+    document.body.classList.toggle('governance-view', governing);
+    scopeLabel.hidden = !governing;
+    if (lastView !== view) {
+      if (governing) {
+        for (const key of ['regulator', 'country']) {
+          options($('#' + key), [...new Set(policies().map(p => p[key]))].sort(), key === 'regulator' ? 'All regulators' : 'All countries');
+        }
+        options($('#category'), [...new Set(policies().map(p => p.policyType))].sort(), 'All policy types');
+        options(scopeSelect, [...new Set(policies().flatMap(p => p.scope || []))].sort(), 'All scopes');
+      } else {
+        populate();
+      }
+      lastView = view;
+    }
+    if (categoryText) categoryText.textContent = governing ? 'Policy type' : originalCategoryText;
+    if (governing) {
+      $('#filter-panel').hidden = false;
+      $$('.example-filter').forEach(label => { label.hidden = true; });
+      $('#regulator').closest('label').hidden = false;
+      $('#country').closest('label').hidden = false;
+    }
+  }
+
+  function filteredPolicies() {
+    const q = $('#search').value.trim().toLowerCase();
+    return policies().filter(p =>
+      (!q || JSON.stringify(p).toLowerCase().includes(q)) &&
+      (!$('#category').value || p.policyType === $('#category').value) &&
+      (!$('#regulator').value || p.regulator === $('#regulator').value) &&
+      (!$('#country').value || p.country === $('#country').value) &&
+      (!scopeSelect.value || (p.scope || []).includes(scopeSelect.value))
+    );
+  }
+
+  function policyCard(p) {
+    const list = values => '<ul>' + (values || []).map(value => '<li>' + esc(value) + '</li>').join('') + '</ul>';
+    return `<article class="card governance-card" style="--branch:${palette[0]}">
+      <p class="meta">${esc(p.country)} · ${esc(p.policyType)}</p>
+      <span class="badge" data-status="Governance">${esc(p.status)}</span>
+      <h3>${esc(p.title)}</h3><div class="regulator">${esc(p.regulator)}</div>
+      <p>${esc(p.description)}</p><p class="meta">Applies to: ${esc((p.scope || []).join(' · '))}</p>
+      <details><summary>Explore policy</summary>
+        <h4>Permitted uses</h4>${list(p.permittedUses)}
+        <h4>Restrictions</h4>${list(p.restrictions)}
+        <h4>Human review</h4><p>${esc(p.humanOversight)}</p>
+        <h4>Disclosure</h4><p>${esc(p.disclosure)}</p>
+        <h4>Tools mentioned</h4><p>${esc((p.toolsMentioned || []).join(' · ') || 'No named tools in the reviewed evidence.')}</p>
+        <h4>Dates</h4><p>Effective: ${esc(p.effectiveDate || 'Not stated')}<br>Reviewed: ${esc(p.reviewedDate)}</p>
+        ${p.effectiveDateNote ? `<p>${esc(p.effectiveDateNote)}</p>` : ''}
+        <h4>Evidence limits</h4><p>${esc(p.evidenceLimit)}</p>
+        <h4>Original policy and sources</h4><p>${sourceLinks(p)}</p><p>${esc(p.sourceRef)}</p>
+      </details></article>`;
+  }
+
+  renderCards = function () {
+    if (!isGovernance()) {
+      setFilters();
+      originalRenderCards();
+      return;
+    }
+    setFilters();
+    $$('nav button').forEach(button => {
+      if (button.dataset.view === view) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
+    });
+    $('#view-title').textContent = 'AI governance catalog';
+    $('#view-description').textContent = 'Compare regulator policies for staff, utilities and participants. Each entry identifies who it applies to.';
+    const rows = filteredPolicies();
+    $('#count').textContent = rows.length + ' of ' + counted(policies().length, 'policy', 'policies');
+    $('#results').innerHTML = rows.length
+      ? '<div class="grid">' + rows.map(policyCard).join('') + '</div>'
+      : '<div class="empty"><h3>No matching policies</h3><p>Try another term or clear the filters.</p></div>';
+  };
+
+  showArea = function (name) {
+    if (!isGovernance()) { originalShowArea(name); return; }
+    $('#area-explainer').hidden = !name;
+    $('#area-title').textContent = name || '';
+    $('#area-description').textContent = name ? 'Select a policy to view its scope, restrictions and original sources.' : '';
+  };
+
+  drawMap = function () {
+    if (!isGovernance()) { originalDrawMap(); return; }
+    if (presentation !== 'map') return;
+    const records = filteredPolicies();
+    const groups = [...new Set(records.map(p => p.regulator))].map(name => ({ name, rows: records.filter(p => p.regulator === name) }));
+    branchBounds = {};
+    const left = [], right = [];
+    let lh = 0, rh = 0;
+    for (const group of groups) {
+      group.height = Math.max(135, group.rows.length * 140);
+      if (lh <= rh) { left.push(group); lh += group.height + 50; }
+      else { right.push(group); rh += group.height + 50; }
+    }
+    mapHeight = Math.max(550, lh, rh) + 80;
+    mapWidth = right.length ? 1800 : 1200;
+    const center = { x: 900, y: mapHeight / 2 };
+    $('#map-world').style.width = mapWidth + 'px';
+    $('#map-world').style.height = mapHeight + 'px';
+    const canvas = $('#connections');
+    canvas.width = mapWidth; canvas.height = mapHeight;
+    const context = canvas.getContext('2d');
+    const nodes = [];
+    function node(x, y, label, sub, kind, key, color) {
+      nodes.push(`<button class="map-node ${kind}" style="left:${x}px;top:${y}px;--branch:${color || palette[0]}" data-kind="${kind}" data-key="${esc(key)}">${esc(label)}<small>${esc(sub)}</small></button>`);
+    }
+    function line(x1, y1, x2, y2, color) {
+      context.beginPath(); context.moveTo(x1, y1);
+      context.bezierCurveTo((x1 + x2) / 2, y1, (x1 + x2) / 2, y2, x2, y2);
+      context.strokeStyle = color; context.lineWidth = 2; context.stroke();
+    }
+    node(center.x, center.y, 'AI governance', counted(records.length, 'policy', 'policies') + ' · ' + counted(groups.length, 'regulator'), 'root', '');
+    for (const [side, total] of [[left, lh], [right, rh]]) {
+      const isLeft = side === left;
+      let top = (mapHeight - total + 50) / 2;
+      for (const group of side) {
+        const color = palette[groups.indexOf(group) % palette.length];
+        const gx = isLeft ? 570 : 1230, gy = top + group.height / 2;
+        branchBounds[group.name] = { x: isLeft ? 355 : 1445, y: gy, width: 710, height: Math.max(250, group.height + 30) };
+        line(center.x, center.y, gx, gy, color);
+        node(gx, gy, group.name, counted(group.rows.length, 'policy', 'policies'), 'category', group.name, color);
+        group.rows.forEach((policy, i) => {
+          const x = isLeft ? 190 : 1610, y = top + 70 + i * 140;
+          line(gx, gy, x, y, color);
+          node(x, y, policy.title, (policy.scope || []).join(' · '), 'record', policy.id, color);
+        });
+        top += group.height + 50;
+      }
+    }
+    $('#map-nodes').innerHTML = records.length ? nodes.join('') : '<div class="empty"><h3>No matching policies</h3><p>Clear the filters to explore all policies.</p></div>';
+    fitMap();
+  };
+
+  $('#map-nodes').onclick = event => {
+    if (!isGovernance()) { originalMapClick(event); return; }
+    const node = event.target.closest('button');
+    if (!node) return;
+    if (node.dataset.kind === 'root') { returnToOverview(); return; }
+    if (node.dataset.kind === 'category') { focusArea(node.dataset.key); return; }
+    const policy = policies().find(p => p.id === node.dataset.key);
+    if (!policy) return;
+    $('#record-content').innerHTML = policyCard(policy);
+    $('#record-content details').open = true;
+    $('#record-dialog').showModal();
+  };
+  render();
+})();

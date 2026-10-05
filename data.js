@@ -272,24 +272,28 @@ window.EXPLORER_DATA = {
       "id": "example-176",
       "regulator": "FERC, USA",
       "tool": "Public AI use-case inventory",
-      "description": "FERC publishes a page linking to its 2025 AI use-case inventory, updated on 28 January 2026. This confirms the availability of an inventory, but the linked spreadsheet could not be inspected in this review. A specific interconnection tool and its deployment status therefore remain unverified.",
+      "description": "FERC publishes an AI use-case inventory. Its FY2025 individual inventory has six records: one deployed application, one pilot and four pre-deployment entries. Commercial tools are reported separately.",
       "usp": "An inventory can be a starting point for finding relevant agency experience and identifying follow-up contacts. A regulator should examine individual entries and their evidence before treating them as proven applications.",
       "category": "AI Governance",
       "country": "USA",
       "audience": [],
-      "status": "Not established",
-      "statusNote": "Inventory landing page verified; spreadsheet contents not verified. The earlier interconnection-specific label has been removed to avoid presenting it as a confirmed application.",
+      "status": "Governance",
+      "statusNote": "Individual records were inspected through the official OMB consolidation. Inventory publication is a transparency example, not an additional AI tool deployment.",
       "sources": [
         {
-          "label": "FERC AI Use Case Inventory",
+          "label": "FERC inventory page",
           "url": "https://www.ferc.gov/media/ai-use-case-inventory"
+        },
+        {
+          "label": "Official OMB individual AI inventory",
+          "url": "https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory/blob/main/Data/2025_individually_reported_AI_use_cases.csv"
         }
       ],
-      "sourceRef": "FERC AI Use Case Inventory page, updated 28 January 2026.",
+      "sourceRef": "FY2025 inventory; official OMB consolidation retrieved the FERC workbook on 13 April 2026.",
       "origin": "Reviewed research",
       "regulatorQuestion": "What does the individual inventory entry say about purpose, development stage, oversight and evidence of results?",
-      "evidenceLabel": "Partial verification",
-      "reviewedDate": "2026-10-02"
+      "evidenceLabel": "Official government inventory",
+      "reviewedDate": "2026-10-05"
     },
     {
       "id": "example-181",
@@ -401,10 +405,17 @@ window.EXPLORER_DATA = {
       "usp": "This is a concrete example of using a controlled institutional knowledge base to make regulatory information easier to find through everyday questions. It also shows the importance of directing specialised cases to human service channels.",
       "category": "Consumer Services",
       "country": "Costa Rica",
-      "audience": ["Public-facing"],
+      "audience": [
+        "Public-facing"
+      ],
       "status": "Operational",
       "statusNote": "The AI Observatory classifies adoption and execution as verified and records an operational start on 1 June 2026. No public metrics were found for usage, accuracy, errors, corrections, abandonment or escalation to human service.",
-      "sources": [{"label": "AI Observatory: Clara evidence record", "url": "https://www.observatorioia.org/en/proyectos/aresep-clara/"}],
+      "sources": [
+        {
+          "label": "AI Observatory: Clara evidence record",
+          "url": "https://www.observatorioia.org/en/proyectos/aresep-clara/"
+        }
+      ],
       "sourceRef": "AI Observatory Costa Rica evidence record, last verified 1 September 2026; the record traces its claims to two ARESEP primary sources.",
       "origin": "Reviewed research",
       "regulatorQuestion": "How will wrong or incomplete answers be detected, corrected and escalated to staff?",
@@ -419,10 +430,21 @@ window.EXPLORER_DATA = {
       "usp": "This illustrates an organisation-wide route into generative AI: provide a managed general-purpose tool, establish internal rules and test applications in business processes before making stronger claims about value.",
       "category": "Document & Case Analysis",
       "country": "Brazil",
-      "audience": ["Internal"],
+      "audience": [
+        "Internal"
+      ],
       "status": "Operational",
       "statusNote": "ANEEL reports licence acquisition and availability alongside pilots. The 600 figure is a licence count, not evidence of active users, current 2026 use or measured benefits. Specific workflows and adoption rates were not established.",
-      "sources": [{"label": "ANEEL 2024 management report", "url": "https://www2.aneel.gov.br/cedoc/aprt20256955_2.pdf"}, {"label": "ANEEL internal organisation rules", "url": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/normas-internas-de-organizacao"}],
+      "sources": [
+        {
+          "label": "ANEEL 2024 management report",
+          "url": "https://www2.aneel.gov.br/cedoc/aprt20256955_2.pdf"
+        },
+        {
+          "label": "ANEEL internal organisation rules",
+          "url": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/normas-internas-de-organizacao"
+        }
+      ],
       "sourceRef": "ANEEL 2024 management report and the agency's list of internal rules. The report PDF was verified through indexed official-source text because direct retrieval was blocked during review.",
       "origin": "Reviewed research",
       "regulatorQuestion": "Which tasks justify the licences, and how will the regulator measure actual use and output quality?",
@@ -437,10 +459,21 @@ window.EXPLORER_DATA = {
       "usp": "This extends consumer-service applications beyond text chatbots. Voice access can help people who prefer telephone support, provided the service makes its limits clear and offers a reliable route to a human adviser.",
       "category": "Consumer Services",
       "country": "Italy",
-      "audience": ["Public-facing"],
+      "audience": [
+        "Public-facing"
+      ],
       "status": "Pilot/Experimental",
       "statusNote": "Official reporting confirms use while also describing experimentation. The reviewed sources do not establish the model, supplier, generative AI architecture, full rollout or AI-specific performance. Overall call volume is not a measure of calls handled by AI.",
-      "sources": [{"label": "ARERA president's 2025 annual presentation", "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/25/Presentazione_del_Presidente_2025.pdf"}, {"label": "ARERA 2025 annual-report summary", "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/25/Sintesi_Relazione_Annuale_2025_10settembre.pdf"}],
+      "sources": [
+        {
+          "label": "ARERA president's 2025 annual presentation",
+          "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/25/Presentazione_del_Presidente_2025.pdf"
+        },
+        {
+          "label": "ARERA 2025 annual-report summary",
+          "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/25/Sintesi_Relazione_Annuale_2025_10settembre.pdf"
+        }
+      ],
       "sourceRef": "ARERA 2025 annual presentation, printed page 27, and 2025 annual-report summary.",
       "origin": "Reviewed research",
       "regulatorQuestion": "When and how can a caller reach a human adviser?",
@@ -455,15 +488,180 @@ window.EXPLORER_DATA = {
       "usp": "The Commission provides a useful example of testing routine analytical and document tasks under explicit controls. Its statement separates confirmed internal productivity uses from possible future support for compliance and enforcement work.",
       "category": "Document & Case Analysis",
       "country": "New Zealand",
-      "audience": ["Internal"],
+      "audience": [
+        "Internal"
+      ],
       "status": "Pilot/Experimental",
       "statusNote": "The Commission describes early-stage testing. No named product, deployment scale, energy-specific application or measured outcome is provided. Compliance and enforcement applications are possible uses, not confirmed deployments, and AI is not used for direct public interaction.",
-      "sources": [{"label": "Commerce Commission AI transparency statement", "url": "https://www.comcom.govt.nz/about-us/our-policies-and-guidelines/transparency-statement/"}],
+      "sources": [
+        {
+          "label": "Commerce Commission AI transparency statement",
+          "url": "https://www.comcom.govt.nz/about-us/our-policies-and-guidelines/transparency-statement/"
+        }
+      ],
       "sourceRef": "Commerce Commission AI transparency statement, published 1 April 2026.",
       "origin": "Reviewed research",
       "regulatorQuestion": "Which trial tasks are suitable given confidentiality restrictions and human-review requirements?",
       "evidenceLabel": "Primary-source transparency statement",
       "reviewedDate": "2026-10-05"
+    },
+    {
+      "id": "example-221",
+      "regulator": "FERC, USA",
+      "tool": "SPARC: consultation-comment analysis",
+      "description": "SPARC groups public comments by topic and sentiment, provides summaries and visualisations, and answers analysts' questions. FERC lists it as deployed under human oversight.",
+      "usp": "Helps analysts navigate consultation submissions. Sentiment summaries should support examination of the evidence and arguments in each submission.",
+      "category": "Document & Case Analysis",
+      "country": "USA",
+      "audience": [
+        "Internal"
+      ],
+      "status": "Operational",
+      "statusNote": "FERC-0001 reports deployment on 15 October 2025. No numerical evaluation results or realised time saving were established. October 2026 continuation has not been independently verified.",
+      "sources": [
+        {
+          "label": "Official OMB individual AI inventory",
+          "url": "https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory/blob/main/Data/2025_individually_reported_AI_use_cases.csv"
+        },
+        {
+          "label": "FERC inventory page",
+          "url": "https://www.ferc.gov/media/ai-use-case-inventory"
+        }
+      ],
+      "sourceRef": "FY2025 inventory, record FERC-0001; read through OMB's official consolidation because direct agency workbook access failed.",
+      "origin": "Reviewed research",
+      "evidenceLabel": "Official government inventory",
+      "reviewedDate": "2026-10-05",
+      "regulatorQuestion": "How will analysts check whether summaries omit minority views or misrepresent the substance of comments?"
+    },
+    {
+      "id": "example-226",
+      "regulator": "FERC, USA",
+      "tool": "Gas blanket-certificate filing analysis",
+      "description": "This pilot classifies and summarises filings and issuances, flags sensitive material and creates searchable metadata from FERC's eLibrary and PIW records.",
+      "usp": "Can help staff organise permit-related records. Its role is filing management rather than automated permit approval.",
+      "category": "Document & Case Analysis",
+      "country": "USA",
+      "audience": [
+        "Internal"
+      ],
+      "status": "Pilot/Experimental",
+      "statusNote": "FERC-0005 lists a pilot beginning 24 November 2025. No measured error rate or pilot results were established; later production deployment was not confirmed.",
+      "sources": [
+        {
+          "label": "Official OMB individual AI inventory",
+          "url": "https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory/blob/main/Data/2025_individually_reported_AI_use_cases.csv"
+        }
+      ],
+      "sourceRef": "FY2025 inventory, record FERC-0005.",
+      "origin": "Reviewed research",
+      "evidenceLabel": "Official government inventory",
+      "reviewedDate": "2026-10-05",
+      "regulatorQuestion": "How will staff detect missed documents, incorrect classifications and inaccurate summaries?"
+    },
+    {
+      "id": "example-231",
+      "regulator": "FERC, USA",
+      "tool": "Microsoft 365 Copilot and Azure OpenAI for staff work",
+      "description": "FERC reports these products for drafting and report summarisation, and Microsoft 365 Copilot for word-processing assistance and agency-information retrieval.",
+      "usp": "Illustrates general staff adoption alongside specialised regulatory applications. Each task still needs an appropriate review process.",
+      "category": "Search & Knowledge",
+      "country": "USA",
+      "audience": [
+        "Internal"
+      ],
+      "status": "Operational",
+      "statusNote": "Commercial inventory rows report use and a 101–1,000 licences/users band. This is not a verified active-user count; repeated bands must not be added together. Model versions and measured benefits were not established.",
+      "sources": [
+        {
+          "label": "Official OMB commercial AI inventory",
+          "url": "https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory/blob/main/Data/2025_consolidated_COTS_AI_use_cases.csv"
+        }
+      ],
+      "sourceRef": "FY2025 commercial-tool inventory, FERC rows for drafting, summarisation, word processing and knowledge retrieval marked use Y.",
+      "origin": "Reviewed research",
+      "evidenceLabel": "Official government inventory",
+      "reviewedDate": "2026-10-05",
+      "regulatorQuestion": "Which tasks benefit from the tools, and how will staff verify outputs before relying on them?"
+    },
+    {
+      "id": "example-236",
+      "regulator": "FERC, USA",
+      "tool": "GitHub Copilot for code generation",
+      "description": "FERC reports using GitHub Copilot for code generation in its commercial AI inventory.",
+      "usp": "Supports a regulator's technical capacity. Generated code needs review and checks appropriate to the purpose of the software.",
+      "category": "Regulatory Analysis",
+      "country": "USA",
+      "audience": [
+        "Internal"
+      ],
+      "status": "Operational",
+      "statusNote": "Reported use, with a 1–100 licences/users band. No productivity measurement or regulatory decision workflow was established. This is an internal technical-support example.",
+      "sources": [
+        {
+          "label": "Official OMB commercial AI inventory",
+          "url": "https://github.com/ombegov/2025-Federal-Agency-AI-Use-Case-Inventory/blob/main/Data/2025_consolidated_COTS_AI_use_cases.csv"
+        }
+      ],
+      "sourceRef": "FY2025 commercial-tool inventory, FERC code-generation row marked use Y.",
+      "origin": "Reviewed research",
+      "evidenceLabel": "Official government inventory",
+      "reviewedDate": "2026-10-05",
+      "regulatorQuestion": "Who checks generated code for correctness and security before it is used?"
+    },
+    {
+      "id": "example-241",
+      "regulator": "CRE, France",
+      "tool": "Secured AI available to staff",
+      "description": "CRE's 2024 annual report says it formally made AI available to staff through a secured setup to assist routine tasks. It does not name a product or model.",
+      "usp": "Shows an energy regulator introducing internal AI despite limited public technical detail. It is a starting point for learning about institutional adoption.",
+      "category": "Document & Case Analysis",
+      "country": "France",
+      "audience": [
+        "Internal"
+      ],
+      "status": "Operational",
+      "statusNote": "Staff availability is reported for 2024. Current extent, vendor, architecture, adoption volume and measured outcomes remain unestablished. Discussions about AI surveillance experiments do not establish deployment of a CRE surveillance system.",
+      "sources": [
+        {
+          "label": "CRE 2024 annual report",
+          "url": "https://www.cre.fr/fileadmin/Documents/Rapports_et_etudes/2025/CRE_RA2024.pdf"
+        },
+        {
+          "label": "CRE 2025 annual report",
+          "url": "https://www.cre.fr/fileadmin/Documents/Rapports_et_etudes/2026/CRE_RA2025.pdf"
+        }
+      ],
+      "sourceRef": "2024 annual report, printed pages 21 and 31; 2025 annual report, printed page 89, reports exchanges about AI in regulatory work.",
+      "origin": "Reviewed research",
+      "evidenceLabel": "Primary-source annual reporting",
+      "reviewedDate": "2026-10-05",
+      "regulatorQuestion": "Which staff tasks are covered, and what safeguards and results can the regulator disclose?"
+    },
+    {
+      "id": "example-246",
+      "regulator": "CNMC, Spain",
+      "tool": "BRAVA: bid-rigging screening",
+      "description": "BRAVA uses machine learning to classify tender bids as potentially collusive or competitive. CNMC describes development by its Economic Intelligence Unit with IT support, following a contracted proof of concept.",
+      "usp": "Illustrates screening that helps focus analysts' attention. A flag is a reason for further investigation, not proof of a violation.",
+      "category": "Monitoring & Compliance",
+      "country": "Spain",
+      "audience": [
+        "Internal"
+      ],
+      "status": "Operational",
+      "statusNote": "The developed tool is documented in April 2024 using public-procurement data. Current deployment scale, accuracy and enforcement outcomes remain unestablished. This is competition enforcement at a multisector regulator; energy-specific use is unconfirmed.",
+      "sources": [
+        {
+          "label": "CNMC BRAVA announcement",
+          "url": "https://blog.cnmc.es/2024/04/11/premio-a-brava-cnmc-contra-el-fraude-en-contratacion-publica/"
+        }
+      ],
+      "sourceRef": "CNMC announcement, 11 April 2024.",
+      "origin": "Reviewed research",
+      "evidenceLabel": "Primary-source tool announcement",
+      "reviewedDate": "2026-10-05",
+      "regulatorQuestion": "How are false positives reviewed, and is the approach suitable for the regulator's own data and remit?"
     }
   ],
   "usecases": [
@@ -605,55 +803,65 @@ window.EXPLORER_DATA = {
     {
       "title": "Accuracy",
       "why": "AI can produce confident but wrong outputs.",
-      "action": "Require verification against original sources."
+      "action": "Require verification against original sources.",
+      "category": "Evidence & accuracy"
     },
     {
       "title": "Confidentiality",
       "why": "Regulators handle sensitive, commercial, legal and personal data.",
-      "action": "Ban sensitive data in public AI tools and use secure systems."
+      "action": "Ban sensitive data in public AI tools and use secure systems.",
+      "category": "Information & trust"
     },
     {
       "title": "Record integrity",
       "why": "Decisions must be based on the official record.",
-      "action": "Limit AI use in proceedings to approved documents and sources."
+      "action": "Limit AI use in proceedings to approved documents and sources.",
+      "category": "Evidence & accuracy"
     },
     {
       "title": "Bias",
       "why": "AI can reproduce bias from data, documents or system design.",
-      "action": "Test tools regularly and review outputs for unequal impacts."
+      "action": "Test tools regularly and review outputs for unequal impacts.",
+      "category": "People & fairness"
     },
     {
       "title": "Transparency",
       "why": "Stakeholders need to know how information was used.",
-      "action": "Disclose meaningful AI use where it affects formal outputs."
+      "action": "Disclose meaningful AI use where it affects formal outputs.",
+      "category": "Information & trust"
     },
     {
       "title": "Explainability",
       "why": "Regulators need to justify decisions.",
-      "action": "Use AI for support, not final reasoning or decision-making."
+      "action": "Use AI for support, not final reasoning or decision-making.",
+      "category": "Evidence & accuracy"
     },
     {
       "title": "Over-reliance",
       "why": "Staff may trust summaries instead of reading source material.",
-      "action": "Keep human review mandatory for substantive work."
+      "action": "Keep human review mandatory for substantive work.",
+      "category": "People & fairness"
     },
     {
       "title": "Procurement risk",
       "why": "Vendors may overstate what AI tools can do.",
-      "action": "Develop AI procurement checklists and evaluation criteria."
+      "action": "Develop AI procurement checklists and evaluation criteria.",
+      "category": "Skills & suppliers"
     },
     {
       "title": "Capacity gap",
       "why": "Regulators may not have AI expertise internally.",
-      "action": "Build basic AI literacy and partner with technical experts."
+      "action": "Build basic AI literacy and partner with technical experts.",
+      "category": "Skills & suppliers"
     },
     {
       "title": "Public trust",
       "why": "Poorly governed AI use can damage institutional credibility.",
-      "action": "Start with low-risk use cases and clear guardrails."
+      "action": "Start with low-risk use cases and clear guardrails.",
+      "category": "Information & trust"
     }
   ],
-  "dataRevision": "2026-10-05-reta-batch-01",
+  "dataRevision": "2026-10-05-us-eu-approved-governance",
   "reviewedDate": "2026-10-05",
   "categoryDescriptions": {
     "Search & Knowledge": "Find the right document or internal guidance without already knowing its title or location. AI can help staff search decisions, filings and institutional knowledge in everyday language. The original source must remain accessible so users can check relevance and authority.",
@@ -664,5 +872,50 @@ window.EXPLORER_DATA = {
     "AI Regulation & Experimentation": "Learn how energy companiesâ€™ AI applications interact with regulatory duties before wider use. Workshops explore the rules, while controlled trials can test system behaviour and risks. Participation in an experiment should not be confused with approval for unrestricted deployment.",
     "AI Governance": "Set the responsibilities and controls for using AI within a regulator. This includes approving uses, protecting information, checking outputs and explaining meaningful uses to stakeholders. Good governance makes clear who remains accountable when a tool gets something wrong.",
     "Innovation / Funding": "Support research or demonstrations that test AI in the wider energy system. These projects can inform regulatory thinking about costs, benefits and consumer outcomes, even when the regulator does not operate the tool. Compare results with simpler methods and distinguish project claims from independently established benefits."
-  }
+  },
+  "governance": [
+    {
+      "id": "policy-001",
+      "regulator": "Minnesota Public Utilities Commission",
+      "country": "USA",
+      "title": "Policy on Use of Artificial Intelligence",
+      "policyType": "Internal use & regulatory records",
+      "scope": [
+        "Staff",
+        "Commissioners",
+        "Parties & public submissions"
+      ],
+      "status": "Published policy",
+      "effectiveDate": "2025-09-15",
+      "reviewedDate": "2026-10-05",
+      "description": "Sets conditions for staff AI use and maintaining the integrity of the regulatory record; the accompanying public guidance addresses AI-assisted submissions.",
+      "permittedUses": [
+        "Docket-specific NotebookLM collections are given as an example; ChatGPT web searching is limited to general background."
+      ],
+      "restrictions": [
+        "Do not upload non-public data or privileged legal material.",
+        "Keep docket analysis confined to filed records; AI must not replace staff reading or independent judgment."
+      ],
+      "humanOversight": "Verify outputs against source filings and discuss intended use with a supervisor.",
+      "disclosure": "Disclose briefing-paper use that risks mischaracterisation, lost nuance or bias. Public guidance says parties should identify AI-generated submission content and its role.",
+      "toolsMentioned": [
+        "NotebookLM",
+        "ChatGPT"
+      ],
+      "evidenceLimit": "Policy examples establish permitted use, not tool procurement or deployment.",
+      "sources": [
+        {
+          "label": "Minnesota PUC AI policy page",
+          "url": "https://mn.gov/puc/about-us/ai-policy/"
+        },
+        {
+          "label": "Full staff policy",
+          "url": "https://mn.gov/puc/assets/MN%20PUC%20AI%20Policy%20Final%209.15.2025_tcm14-733385.pdf"
+        }
+      ],
+      "sourceRef": "Staff policy effective 15 September 2025, pages 1–4; accompanying public guidance. Summaries are selective; consult the full policy.",
+      "origin": "Reviewed research",
+      "effectiveDateNote": "Effective date refers to the staff policy; the accompanying public guidance page gives no separate effective date."
+    }
+  ]
 };
