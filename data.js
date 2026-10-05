@@ -1,6 +1,6 @@
 window.EXPLORER_DATA = {
   "schemaVersion": 1,
-  "sourceDocument": "AI research.docx, supplemented by linked public sources reviewed on 2 October 2026",
+  "sourceDocument": "AI research.docx, supplemented by linked public sources reviewed through 5 October 2026",
   "categories": [
     "Search & Knowledge",
     "Document & Case Analysis",
@@ -392,6 +392,78 @@ window.EXPLORER_DATA = {
       "regulatorQuestion": "What evidence must recipients publish so others can judge value, limitations and replicability?",
       "evidenceLabel": "Primary-source programme information",
       "reviewedDate": "2026-10-02"
+    },
+    {
+      "id": "example-201",
+      "regulator": "ARESEP, Costa Rica",
+      "tool": "Clara virtual assistant",
+      "description": "Clara is a generative AI assistant on ARESEP's website that answers questions about public regulatory information and guides users to relevant services. The documented system uses Microsoft Copilot Studio and a knowledge base containing more than 730 institutional files.",
+      "usp": "This is a concrete example of using a controlled institutional knowledge base to make regulatory information easier to find through everyday questions. It also shows the importance of directing specialised cases to human service channels.",
+      "category": "Consumer Services",
+      "country": "Costa Rica",
+      "audience": ["Public-facing"],
+      "status": "Operational",
+      "statusNote": "The AI Observatory classifies adoption and execution as verified and records an operational start on 1 June 2026. No public metrics were found for usage, accuracy, errors, corrections, abandonment or escalation to human service.",
+      "sources": [{"label": "AI Observatory: Clara evidence record", "url": "https://www.observatorioia.org/en/proyectos/aresep-clara/"}],
+      "sourceRef": "AI Observatory Costa Rica evidence record, last verified 1 September 2026; the record traces its claims to two ARESEP primary sources.",
+      "origin": "Reviewed research",
+      "regulatorQuestion": "How will wrong or incomplete answers be detected, corrected and escalated to staff?",
+      "evidenceLabel": "Independent evidence record based on official primary sources",
+      "reviewedDate": "2026-10-05"
+    },
+    {
+      "id": "example-206",
+      "regulator": "ANEEL, Brazil",
+      "tool": "Microsoft Copilot rollout and generative AI pilots",
+      "description": "ANEEL's 2024 management report describes adding 600 Microsoft Copilot licences for staff and conducting generative AI pilots in business processes. The available evidence supports internal adoption for staff work, without establishing automated regulatory decision-making.",
+      "usp": "This illustrates an organisation-wide route into generative AI: provide a managed general-purpose tool, establish internal rules and test applications in business processes before making stronger claims about value.",
+      "category": "Document & Case Analysis",
+      "country": "Brazil",
+      "audience": ["Internal"],
+      "status": "Operational",
+      "statusNote": "ANEEL reports licence acquisition and availability alongside pilots. The 600 figure is a licence count, not evidence of active users, current 2026 use or measured benefits. Specific workflows and adoption rates were not established.",
+      "sources": [{"label": "ANEEL 2024 management report", "url": "https://www2.aneel.gov.br/cedoc/aprt20256955_2.pdf"}, {"label": "ANEEL internal organisation rules", "url": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/normas-internas-de-organizacao"}],
+      "sourceRef": "ANEEL 2024 management report and the agency's list of internal rules. The report PDF was verified through indexed official-source text because direct retrieval was blocked during review.",
+      "origin": "Reviewed research",
+      "regulatorQuestion": "Which tasks justify the licences, and how will the regulator measure actual use and output quality?",
+      "evidenceLabel": "Partial primary-source verification",
+      "reviewedDate": "2026-10-05"
+    },
+    {
+      "id": "example-211",
+      "regulator": "ARERA, Italy",
+      "tool": "AI voice portal for the consumer help service",
+      "description": "ARERA's 2025 annual reporting says artificial intelligence was already being used in the voice portal for its consumer call centre, which is operated through Acquirente Unico. A related annual-report summary describes experimentation with a new AI-based voice portal to replace the earlier interactive voice-response architecture.",
+      "usp": "This extends consumer-service applications beyond text chatbots. Voice access can help people who prefer telephone support, provided the service makes its limits clear and offers a reliable route to a human adviser.",
+      "category": "Consumer Services",
+      "country": "Italy",
+      "audience": ["Public-facing"],
+      "status": "Pilot/Experimental",
+      "statusNote": "Official reporting confirms use while also describing experimentation. The reviewed sources do not establish the model, supplier, generative AI architecture, full rollout or AI-specific performance. Overall call volume is not a measure of calls handled by AI.",
+      "sources": [{"label": "ARERA president's 2025 annual presentation", "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/25/Presentazione_del_Presidente_2025.pdf"}, {"label": "ARERA 2025 annual-report summary", "url": "https://www.arera.it/fileadmin/allegati/relaz_ann/25/Sintesi_Relazione_Annuale_2025_10settembre.pdf"}],
+      "sourceRef": "ARERA 2025 annual presentation, printed page 27, and 2025 annual-report summary.",
+      "origin": "Reviewed research",
+      "regulatorQuestion": "When and how can a caller reach a human adviser?",
+      "evidenceLabel": "Primary-source reporting with deployment scope unclear",
+      "reviewedDate": "2026-10-05"
+    },
+    {
+      "id": "example-216",
+      "regulator": "Commerce Commission, New Zealand",
+      "tool": "Internal AI testing for analysis and document work",
+      "description": "The Commerce Commission reports early testing of AI for data classification, formula and script development, summarisation, drafting, transcription, training material and information retrieval. Staff must validate outputs and human decision-makers remain accountable.",
+      "usp": "The Commission provides a useful example of testing routine analytical and document tasks under explicit controls. Its statement separates confirmed internal productivity uses from possible future support for compliance and enforcement work.",
+      "category": "Document & Case Analysis",
+      "country": "New Zealand",
+      "audience": ["Internal"],
+      "status": "Pilot/Experimental",
+      "statusNote": "The Commission describes early-stage testing. No named product, deployment scale, energy-specific application or measured outcome is provided. Compliance and enforcement applications are possible uses, not confirmed deployments, and AI is not used for direct public interaction.",
+      "sources": [{"label": "Commerce Commission AI transparency statement", "url": "https://www.comcom.govt.nz/about-us/our-policies-and-guidelines/transparency-statement/"}],
+      "sourceRef": "Commerce Commission AI transparency statement, published 1 April 2026.",
+      "origin": "Reviewed research",
+      "regulatorQuestion": "Which trial tasks are suitable given confidentiality restrictions and human-review requirements?",
+      "evidenceLabel": "Primary-source transparency statement",
+      "reviewedDate": "2026-10-05"
     }
   ],
   "usecases": [
@@ -533,66 +605,56 @@ window.EXPLORER_DATA = {
     {
       "title": "Accuracy",
       "why": "AI can produce confident but wrong outputs.",
-      "action": "Checking AI outputs against original sources helps prevent errors from entering regulatory work.",
-      "category": "Evidence & accuracy"
+      "action": "Require verification against original sources."
     },
     {
       "title": "Confidentiality",
       "why": "Regulators handle sensitive, commercial, legal and personal data.",
-      "action": "Approved, secure systems help protect confidential information. Sensitive material should stay out of public AI tools.",
-      "category": "Information & trust"
+      "action": "Ban sensitive data in public AI tools and use secure systems."
     },
     {
       "title": "Record integrity",
       "why": "Decisions must be based on the official record.",
-      "action": "Using approved documents and sources helps keep regulatory proceedings grounded in the official record.",
-      "category": "Evidence & accuracy"
+      "action": "Limit AI use in proceedings to approved documents and sources."
     },
     {
       "title": "Bias",
       "why": "AI can reproduce bias from data, documents or system design.",
-      "action": "Regular testing and human review can reveal unequal impacts across people and groups.",
-      "category": "People & fairness"
+      "action": "Test tools regularly and review outputs for unequal impacts."
     },
     {
       "title": "Transparency",
       "why": "Stakeholders need to know how information was used.",
-      "action": "Explaining significant uses of AI helps stakeholders understand how formal outputs were prepared.",
-      "category": "Information & trust"
+      "action": "Disclose meaningful AI use where it affects formal outputs."
     },
     {
       "title": "Explainability",
       "why": "Regulators need to justify decisions.",
-      "action": "AI can support analysis, while people remain responsible for the reasoning behind a decision.",
-      "category": "Evidence & accuracy"
+      "action": "Use AI for support, not final reasoning or decision-making."
     },
     {
       "title": "Over-reliance",
       "why": "Staff may trust summaries instead of reading source material.",
-      "action": "Human review of substantive work helps ensure that summaries do not replace examination of the evidence.",
-      "category": "People & fairness"
+      "action": "Keep human review mandatory for substantive work."
     },
     {
       "title": "Procurement risk",
       "why": "Vendors may overstate what AI tools can do.",
-      "action": "Clear evaluation criteria help regulators assess supplier claims and compare tools before procurement.",
-      "category": "Skills & suppliers"
+      "action": "Develop AI procurement checklists and evaluation criteria."
     },
     {
       "title": "Capacity gap",
       "why": "Regulators may not have AI expertise internally.",
-      "action": "Staff training and access to technical expertise help regulators understand a tool’s capabilities and limits.",
-      "category": "Skills & suppliers"
+      "action": "Build basic AI literacy and partner with technical experts."
     },
     {
       "title": "Public trust",
       "why": "Poorly governed AI use can damage institutional credibility.",
-      "action": "Starting with lower-risk applications and clear safeguards can help build confidence in how AI is used.",
-      "category": "Information & trust"
+      "action": "Start with low-risk use cases and clear guardrails."
     }
   ],
-  "dataRevision": "2026-10-02-research",
-  "reviewedDate": "2026-10-02",
+  "dataRevision": "2026-10-05-reta-batch-01",
+  "reviewedDate": "2026-10-05",
   "categoryDescriptions": {
     "Search & Knowledge": "Find the right document or internal guidance without already knowing its title or location. AI can help staff search decisions, filings and institutional knowledge in everyday language. The original source must remain accessible so users can check relevance and authority.",
     "Document & Case Analysis": "Turn large volumes of written evidence into material that staff can review more easily. Uses include draft summaries, comparing stakeholder positions and grouping consultation responses. Analysts still need to check that important qualifications and minority views have not been lost.",
