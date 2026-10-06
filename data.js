@@ -15,8 +15,8 @@ window.EXPLORER_DATA = {
     {
       "id": "example-118",
       "regulator": "Ontario Energy Board, Canada",
-      "tool": "OEB iSearch™",
-      "description": "OEB iSearch™ lets users search the Ontario Energy Boards regulatory records in everyday language, with filters to narrow the results. OEB's launch information describes access to more than 360,000 documents while retaining the functions of its earlier document-search service.",
+      "tool": "OEB iSearch",
+      "description": "OEB iSearch lets users search the Ontario Energy Board's regulatory records in everyday language, with filters to narrow the results. OEB's launch information describes access to more than 360,000 documents while retaining the functions of its earlier document-search service.",
       "usp": "A regulator can use this approach to make past decisions and filings easier to find for staff and participants. The practical value is better access to evidence, rather than automated interpretation of what a decision means.",
       "category": "Search & Knowledge",
       "country": "Canada",
@@ -29,7 +29,7 @@ window.EXPLORER_DATA = {
       "statusNote": "OEB confirms an external launch. The document count is from the launch description, not a current audited total. No independently measured time-saving result was identified.",
       "sources": [
         {
-          "label": "OEB: iSearch™ external launch",
+          "label": "OEB: iSearch external launch",
           "url": "https://engagewithus.oeb.ca/boost/news_feed/oebisearchlaunch"
         }
       ],
