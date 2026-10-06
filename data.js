@@ -11,7 +11,7 @@ window.EXPLORER_DATA = {
     "AI Governance",
     "Innovation / Funding"
   ],
-  "examples": [
+  "Catalog": [
     {
       "id": "example-118",
       "regulator": "Ontario Energy Board, Canada",
