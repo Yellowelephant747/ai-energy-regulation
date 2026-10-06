@@ -11,7 +11,7 @@ window.EXPLORER_DATA = {
     "AI Governance",
     "Innovation / Funding"
   ],
-  "Catalog": [
+  "examples": [
     {
       "id": "example-118",
       "regulator": "Ontario Energy Board, Canada",
@@ -248,7 +248,7 @@ window.EXPLORER_DATA = {
       "regulator": "Australian Energy Market Commission",
       "tool": "AI transparency statement and internal controls",
       "description": "AEMC reports using AI to summarise submissions, transcribe meetings, process complex datasets and retrieve information. Its transparency statement describes an internal review and approval process and a working group overseeing use. It says decisions remain with people and AI is not deployed in direct public interactions.",
-      "usp": "This is a governance example that a regulator can adapt alongside its technical work. Publishing intended uses, boundaries and accountability helps staff and stakeholders understand where AI fits into the institution.",
+      "usp": "This is a governance catalog entry that a regulator can adapt alongside its technical work. Publishing intended uses, boundaries and accountability helps staff and stakeholders understand where AI fits into the institution.",
       "category": "AI Governance",
       "country": "Australia",
       "audience": [
@@ -278,7 +278,7 @@ window.EXPLORER_DATA = {
       "country": "USA",
       "audience": [],
       "status": "Governance",
-      "statusNote": "Individual records were inspected through the official OMB consolidation. Inventory publication is a transparency example, not an additional AI tool deployment.",
+      "statusNote": "Individual records were inspected through the official OMB consolidation. Inventory publication is a transparency catalog entry, not an additional AI tool deployment.",
       "sources": [
         {
           "label": "FERC inventory page",
@@ -380,7 +380,7 @@ window.EXPLORER_DATA = {
         "Sector-facing"
       ],
       "status": "Adjacent/Research",
-      "statusNote": "Programme-level example. It overlaps with individual CEC projects shown elsewhere, so it is not an additional independent tool or proof that all EPIC projects use AI.",
+      "statusNote": "Programme-level catalog entry. It overlaps with individual CEC projects shown elsewhere, so it is not an additional independent tool or proof that all EPIC projects use AI.",
       "sources": [
         {
           "label": "CEC EPIC programme",
@@ -402,7 +402,7 @@ window.EXPLORER_DATA = {
       "regulator": "ARESEP, Costa Rica",
       "tool": "Clara virtual assistant",
       "description": "Clara is a generative AI assistant on ARESEP's website that answers questions about public regulatory information and guides users to relevant services. The documented system uses Microsoft Copilot Studio and a knowledge base containing more than 730 institutional files.",
-      "usp": "This is a concrete example of using a controlled institutional knowledge base to make regulatory information easier to find through everyday questions. It also shows the importance of directing specialised cases to human service channels.",
+      "usp": "This is a concrete catalog entry of using a controlled institutional knowledge base to make regulatory information easier to find through everyday questions. It also shows the importance of directing specialised cases to human service channels.",
       "category": "Consumer Services",
       "country": "Costa Rica",
       "audience": [
@@ -485,7 +485,7 @@ window.EXPLORER_DATA = {
       "regulator": "Commerce Commission, New Zealand",
       "tool": "Internal AI testing for analysis and document work",
       "description": "The Commerce Commission reports early testing of AI for data classification, formula and script development, summarisation, drafting, transcription, training material and information retrieval. Staff must validate outputs and human decision-makers remain accountable.",
-      "usp": "The Commission provides a useful example of testing routine analytical and document tasks under explicit controls. Its statement separates confirmed internal productivity uses from possible future support for compliance and enforcement work.",
+      "usp": "The Commission provides a useful catalog entry of testing routine analytical and document tasks under explicit controls. Its statement separates confirmed internal productivity uses from possible future support for compliance and enforcement work.",
       "category": "Document & Case Analysis",
       "country": "New Zealand",
       "audience": [
@@ -596,7 +596,7 @@ window.EXPLORER_DATA = {
         "Internal"
       ],
       "status": "Operational",
-      "statusNote": "Reported use, with a 1–100 licences/users band. No productivity measurement or regulatory decision workflow was established. This is an internal technical-support example.",
+      "statusNote": "Reported use, with a 1–100 licences/users band. No productivity measurement or regulatory decision workflow was established. This is an internal technical-support catalog entry.",
       "sources": [
         {
           "label": "Official OMB commercial AI inventory",
@@ -861,7 +861,7 @@ window.EXPLORER_DATA = {
       "category": "Information & trust"
     }
   ],
-  "dataRevision": "2026-10-06-worldwide-governance",
+  "dataRevision": "2026-10-06-worldwide-governance-catalog",
   "reviewedDate": "2026-10-06",
   "categoryDescriptions": {
     "Search & Knowledge": "Find the right document or internal guidance without already knowing its title or location. AI can help staff search decisions, filings and institutional knowledge in everyday language. The original source must remain accessible so users can check relevance and authority.",
@@ -890,7 +890,7 @@ window.EXPLORER_DATA = {
       "reviewedDate": "2026-10-06",
       "description": "Sets conditions for staff AI use and maintaining the integrity of the regulatory record; the accompanying public guidance addresses AI-assisted submissions.",
       "permittedUses": [
-        "Docket-specific NotebookLM collections are given as an example; ChatGPT web searching is limited to general background."
+        "The policy illustrates docket-specific NotebookLM collections; ChatGPT web searching is limited to general background."
       ],
       "restrictions": [
         "Do not upload non-public data or privileged legal material.",
@@ -902,7 +902,7 @@ window.EXPLORER_DATA = {
         "NotebookLM",
         "ChatGPT"
       ],
-      "evidenceLimit": "Policy examples establish permitted use, not tool procurement or deployment.",
+      "evidenceLimit": "Named tools illustrate permitted use, not tool procurement or deployment.",
       "sources": [
         {
           "label": "Minnesota PUC AI policy page",
