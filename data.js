@@ -910,7 +910,7 @@ window.EXPLORER_DATA = {
         },
         {
           "label": "Full staff policy",
-          "url": "https://mn.gov/puc/assets/MN%20PUC%20AI%20Policy%20Final%209.15.2025_tcm14-733385.pdf"
+          "url": "https://mn.gov/puc/assets/PUC%20AI%20Policy_accessible_tcm14-733385.pdf"
         }
       ],
       "sourceRef": "Staff policy effective 15 September 2025, pages 1–4; accompanying public guidance. Summaries are selective; consult the full policy.",
