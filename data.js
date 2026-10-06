@@ -1,6 +1,6 @@
 window.EXPLORER_DATA = {
   "schemaVersion": 1,
-  "sourceDocument": "AI research.docx, supplemented by linked public sources reviewed through 5 October 2026",
+  "sourceDocument": "AI research.docx, supplemented by linked public sources reviewed through 6 October 2026",
   "categories": [
     "Search & Knowledge",
     "Document & Case Analysis",
@@ -861,8 +861,8 @@ window.EXPLORER_DATA = {
       "category": "Information & trust"
     }
   ],
-  "dataRevision": "2026-10-05-us-eu-approved-governance",
-  "reviewedDate": "2026-10-05",
+  "dataRevision": "2026-10-06-worldwide-governance",
+  "reviewedDate": "2026-10-06",
   "categoryDescriptions": {
     "Search & Knowledge": "Find the right document or internal guidance without already knowing its title or location. AI can help staff search decisions, filings and institutional knowledge in everyday language. The original source must remain accessible so users can check relevance and authority.",
     "Document & Case Analysis": "Turn large volumes of written evidence into material that staff can review more easily. Uses include draft summaries, comparing stakeholder positions and grouping consultation responses. Analysts still need to check that important qualifications and minority views have not been lost.",
@@ -887,7 +887,7 @@ window.EXPLORER_DATA = {
       ],
       "status": "Published policy",
       "effectiveDate": "2025-09-15",
-      "reviewedDate": "2026-10-05",
+      "reviewedDate": "2026-10-06",
       "description": "Sets conditions for staff AI use and maintaining the integrity of the regulatory record; the accompanying public guidance addresses AI-assisted submissions.",
       "permittedUses": [
         "Docket-specific NotebookLM collections are given as an example; ChatGPT web searching is limited to general background."
@@ -909,13 +909,310 @@ window.EXPLORER_DATA = {
           "url": "https://mn.gov/puc/about-us/ai-policy/"
         },
         {
-          "label": "Full staff policy",
+          "label": "Full staff policy (accessible PDF)",
           "url": "https://mn.gov/puc/assets/PUC%20AI%20Policy_accessible_tcm14-733385.pdf"
         }
       ],
-      "sourceRef": "Staff policy effective 15 September 2025, pages 1–4; accompanying public guidance. Summaries are selective; consult the full policy.",
+      "sourceRef": "Accessible staff policy effective 15 September 2025, pages 1–5; accompanying public guidance. Summaries are selective; consult the full policy.",
       "origin": "Reviewed research",
       "effectiveDateNote": "Effective date refers to the staff policy; the accompanying public guidance page gives no separate effective date."
+    },
+    {
+      "id": "policy-002",
+      "regulator": "Ontario Energy Board",
+      "country": "Canada",
+      "title": "Generative AI in regulatory filings",
+      "policyType": "Procedural rules",
+      "scope": [
+        "Regulated utilities",
+        "Parties & public submissions",
+        "Staff"
+      ],
+      "status": "Adopted rules",
+      "description": "Requires disclosure and independent accuracy verification of generative-AI content prepared for regulatory proceedings, including public letters of comment.",
+      "permittedUses": [
+        "Generative AI may assist preparation of filings subject to the disclosure and verification rules."
+      ],
+      "restrictions": [
+        "Parties must confirm that generated content was verified without generative AI.",
+        "The obligation targets content prepared for a proceeding; it does not create a general rule for utilities’ operational AI."
+      ],
+      "humanOversight": "The party or representative verifies generated content without generative AI; public commenters must also confirm verification.",
+      "disclosure": "Rules 9.03–9.04 specify disclosure and its location; rules 23.03–23.04 address letters of comment. The adoption letter expects consistent disclosure for staff filings.",
+      "effectiveDate": "2025-12-01",
+      "effectiveDateNote": "Amendments adopted 13 November 2025; AI-related provisions effective 1 December 2025.",
+      "evidenceLimit": "Adopted procedural rules; no evaluation of compliance or effectiveness was established.",
+      "sources": [
+        {
+          "label": "Adopted Rules of Practice and Procedure",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/921439/File/document"
+        },
+        {
+          "label": "Adoption notice",
+          "url": "https://www.rds.oeb.ca/CMWebDrawer/Record/921437/File/document"
+        }
+      ],
+      "sourceRef": "Rules 9.03–9.04 and 23.03–23.04, printed pages 7 and 20; adoption notice dated 13 November 2025.",
+      "toolsMentioned": [],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
+    },
+    {
+      "id": "policy-003",
+      "regulator": "Ofgem",
+      "country": "Great Britain",
+      "title": "Ethical AI use in the energy sector",
+      "policyType": "Voluntary sector guidance",
+      "scope": [
+        "Regulated utilities",
+        "Energy-sector organisations"
+      ],
+      "status": "Published voluntary guidance",
+      "description": "Energy-specific good practice for AI governance throughout its lifecycle, with practical guidance for consumer interactions, forecasting and grid management.",
+      "permittedUses": [
+        "Supports responsible sector AI use with governance proportionate to risk."
+      ],
+      "restrictions": [
+        "Organisations should address safety, security, fairness, environmental impacts and supply-chain risks.",
+        "This is voluntary good-practice guidance, not a new binding AI rule."
+      ],
+      "humanOversight": "Guidance recommends clear board and management accountability, competent decision makers, testing, monitoring and escalation.",
+      "disclosure": "The 2026 version strengthens proportionate transparency and explainability for people affected by AI.",
+      "effectiveDate": "",
+      "effectiveDateNote": "Published 20 May 2025; version 2 published 13 May 2026. These are publication dates, not a statutory commencement date.",
+      "evidenceLimit": "Published guidance does not establish that energy companies have adopted or complied with every practice.",
+      "sources": [
+        {
+          "label": "Guidance and revision history",
+          "url": "https://www.ofgem.gov.uk/guidance/ethical-ai-use-energy-sector"
+        },
+        {
+          "label": "Version 2 guidance",
+          "url": "https://www.ofgem.gov.uk/sites/default/files/2026-05/ethical-ai-use-in-the-energy-sector.pdf"
+        }
+      ],
+      "sourceRef": "Version 2, sections 3–6 and appendices on supply chains, data, cybersecurity and explainability.",
+      "toolsMentioned": [],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
+    },
+    {
+      "id": "policy-004",
+      "regulator": "Australian Energy Regulator",
+      "country": "Australia",
+      "title": "AI transparency statement and internal governance",
+      "policyType": "Governance transparency statement",
+      "scope": [
+        "Staff"
+      ],
+      "status": "Published governance statement",
+      "description": "Describes internal AI policy, named accountability, approval pathways, an AI register and mandatory training. Staff retain oversight and decision-making responsibility.",
+      "permittedUses": [
+        "Document review, dataset insights, summarisation, retrieval, transcription, routine tasks and drafting within the stated limits."
+      ],
+      "restrictions": [
+        "Draft generation excludes documents subject to administrative review.",
+        "AI systems do not make decisions or take actions on their own."
+      ],
+      "humanOversight": "An accountable official implements policy; the Corporate Governance Board has ultimate oversight, supported by a working group and risk management.",
+      "disclosure": "The statement reports no direct public AI interaction through the Contact Centre or Energy Made Easy; it will be updated if public interaction is introduced.",
+      "effectiveDate": "",
+      "effectiveDateNote": "Statement published July 2026 and updated 27 July 2026; exact internal-policy commencement date was not established.",
+      "evidenceLimit": "The public statement describes an internal policy; the complete internal policy and actual control effectiveness were not independently reviewed.",
+      "sources": [
+        {
+          "label": "AER AI transparency statement",
+          "url": "https://www.aer.gov.au/about/policies/artificial-intelligence-transparency-statement"
+        }
+      ],
+      "sourceRef": "Sections on usage, public interaction, compliance, monitoring and annual review.",
+      "toolsMentioned": [],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
+    },
+    {
+      "id": "policy-005",
+      "regulator": "Clean Energy Regulator",
+      "country": "Australia",
+      "title": "AI governance and transparency commitments",
+      "policyType": "Governance transparency statement",
+      "scope": [
+        "Staff",
+        "Regulator public-facing services"
+      ],
+      "status": "Published governance statement",
+      "description": "Sets risk assessment, monitoring and suspension conditions for AI supporting clean-energy and carbon-abatement schemes. This is a scheme regulator rather than a tariff regulator.",
+      "permittedUses": [
+        "Enterprise productivity tools and human-reviewed analysis; AI-assisted compliance tools are also being developed."
+      ],
+      "restrictions": [
+        "Compliance, enforcement and eligibility decisions require human review and approval.",
+        "Sensitive or personal data require express assessment and approval before AI training or prompting.",
+        "Regulatory notices and legal instruments require human validation and sign-off.",
+        "Use is paused or discontinued if safeguards, accuracy metrics or risk thresholds are not met."
+      ],
+      "humanOversight": "Trained staff approve advice affecting people or entities. Governance includes the Chair, senior leadership, a Chief AI Officer and a technology/change committee.",
+      "disclosure": "Public-facing AI must include user disclosure, human escalation, accuracy safeguards and accessibility consideration before deployment.",
+      "effectiveDate": "",
+      "effectiveDateNote": "The reviewed page does not state an exact publication or revision date. A Chief AI Officer was appointed in July 2025.",
+      "evidenceLimit": "These are published governance commitments; do not infer that all described or developing tools are deployed, or that every control has been audited.",
+      "sources": [
+        {
+          "label": "Clean Energy Regulator AI transparency statement",
+          "url": "https://cer.gov.au/about-us/our-policies/artificial-intelligence-transparency-statement"
+        }
+      ],
+      "sourceRef": "Sections on transparency, risk assessment, ethical principles, training and governance.",
+      "toolsMentioned": [
+        "Microsoft 365 Copilot"
+      ],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
+    },
+    {
+      "id": "policy-006",
+      "regulator": "FERC, USA",
+      "country": "USA",
+      "title": "Internal AI policy and compliance framework",
+      "policyType": "Internal policy / compliance plan",
+      "scope": [
+        "Staff",
+        "Procurement & development teams"
+      ],
+      "status": "Published compliance plan",
+      "description": "Connects internal AI behaviour rules with use-case approval, procurement, monitoring and audits, as documented in the September 2026 compliance plan.",
+      "permittedUses": [
+        "FERC-managed and public AI tools are distinguished; authorised uses follow agency rules of behaviour and governance review."
+      ],
+      "restrictions": [
+        "Unauthorised sensitive or controlled information must not be entered in public AI tools.",
+        "Outputs must be verified; intellectual-property requirements respected.",
+        "Non-compliant AI may be removed and replaced with compliant alternatives."
+      ],
+      "humanOversight": "The AI Steering Board reviews and approves use cases and oversees monitoring/audits; CIO, security, risk and acquisition functions participate.",
+      "disclosure": "The plan requires transparency and addresses procurement transparency and data rights; it is an internal framework, not an AI rule for utilities.",
+      "effectiveDate": "",
+      "effectiveDateNote": "Internal AI policy effective Q4 FY2024 (US federal fiscal year); subsequently updated. Compliance plan published 23 September 2026.",
+      "evidenceLimit": "The compliance plan describes the internal policy; its complete separate text and effectiveness were not independently reviewed.",
+      "sources": [
+        {
+          "label": "FERC compliance-plan publication",
+          "url": "https://www.ferc.gov/media/ferc-compliance-plan-omb-memorandum-m-25-21"
+        },
+        {
+          "label": "September 2026 compliance plan",
+          "url": "https://www.ferc.gov/sites/default/files/2026-09/2026%20-%20FERC%20AI%20Compliance%20Plan%20Final.pdf"
+        }
+      ],
+      "sourceRef": "September 2026 plan, especially pages 3–5; policy history on page 1.",
+      "toolsMentioned": [],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
+    },
+    {
+      "id": "policy-007",
+      "regulator": "Commerce Commission, New Zealand",
+      "country": "New Zealand",
+      "title": "AI transparency and governance statement",
+      "policyType": "Governance transparency statement",
+      "scope": [
+        "Staff"
+      ],
+      "status": "Published governance statement",
+      "description": "Requires risk-based review before AI development, staff training, validated outputs and human accountability across a multisector regulator that includes energy networks.",
+      "permittedUses": [
+        "Early testing includes productivity, formula/script development, classification, drafting, retrieval and transcription."
+      ],
+      "restrictions": [
+        "LLMs cannot access confidential data collected through regulatory responsibilities.",
+        "AI is not deployed in direct interaction with the public.",
+        "Staff must complete fundamental AI training before use."
+      ],
+      "humanOversight": "Staff review and validate outputs before reliance; human decision makers remain accountable. Use cases are reviewed before development against the public-service framework and legal context.",
+      "disclosure": "The statement explains AI uses and safeguards, with annual or significant-change updates; its governance context includes the Treaty of Waitangi.",
+      "effectiveDate": "",
+      "effectiveDateNote": "Published 1 April 2026; publication does not establish a separate internal-policy commencement date.",
+      "evidenceLimit": "Multisector agency statement, not an energy-only policy; compliance/enforcement uses are described as possible rather than necessarily deployed.",
+      "sources": [
+        {
+          "label": "Commerce Commission AI transparency section",
+          "url": "https://www.comcom.govt.nz/about-us/our-policies-and-guidelines/transparency-statement/"
+        }
+      ],
+      "sourceRef": "AI use, governance/compliance and statement-review sections.",
+      "toolsMentioned": [],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
+    },
+    {
+      "id": "policy-008",
+      "regulator": "ARESEP",
+      "country": "Costa Rica",
+      "title": "Clara chatbot: declaration of AI use",
+      "policyType": "Service-specific transparency declaration",
+      "scope": [
+        "Regulator public-facing services"
+      ],
+      "status": "Published service declaration",
+      "description": "Explains Clara’s technology, knowledge sources, controlled responses and fallback to official human channels. Covers the public chatbot rather than all agency AI.",
+      "permittedUses": [
+        "Clara answers public-information queries using institutional website content, curated technical content and configured knowledge sources."
+      ],
+      "restrictions": [
+        "User personal data are not used to train models and users are not profiled, according to the declaration.",
+        "The chatbot supplements human service and does not replace specialist case analysis."
+      ],
+      "humanOversight": "Information sources are defined and validated by ARESEP; insufficient information leads users to official service channels.",
+      "disclosure": "The public declaration identifies the platform, source information, purposes, data-use limits and service limitations.",
+      "effectiveDate": "",
+      "effectiveDateNote": "Website page updated 29 September 2026; this is not an established adoption date for the declaration.",
+      "evidenceLimit": "Service-specific public commitments, not a full agency AI policy or an independently audited technical assessment.",
+      "sources": [
+        {
+          "label": "ARESEP declaration of AI use",
+          "url": "https://aresep.go.cr/transparencia/informacion-institucional/condiciones-especiales/"
+        }
+      ],
+      "sourceRef": "“Declaración de uso de inteligencia artificial” and its subsections.",
+      "toolsMentioned": [
+        "Microsoft Copilot Studio"
+      ],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
+    },
+    {
+      "id": "policy-009",
+      "regulator": "ANEEL",
+      "country": "Brazil",
+      "title": "Policy for use and development of generative AI",
+      "policyType": "Internal AI policy",
+      "scope": [
+        "Staff",
+        "Procurement & development teams"
+      ],
+      "status": "Adoption confirmed; full text unverified",
+      "description": "The official organisation-standard index lists an adopted policy governing generative-AI use and development within ANEEL: Organisation Standard 061/2025, Portaria 6.981.",
+      "permittedUses": [
+        "Detailed permitted uses have not been verified from the full policy text."
+      ],
+      "restrictions": [
+        "Detailed restrictions have not been verified from the full policy text."
+      ],
+      "humanOversight": "Not established by the accessible official index; full policy text requires review.",
+      "disclosure": "Not established by the accessible official index; full policy text requires review.",
+      "effectiveDate": "",
+      "effectiveDateNote": "Portaria dated 30 June 2025. Exact commencement provisions were not verified.",
+      "evidenceLimit": "Adoption and internal scope are confirmed by ANEEL’s official index. Full text could not be retrieved; do not infer safeguards from older differently numbered instruments. Staff/development scope describes agency use and development, not verified addressee clauses.",
+      "sources": [
+        {
+          "label": "ANEEL official organisation-standard index",
+          "url": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/normas-internas-de-organizacao"
+        }
+      ],
+      "sourceRef": "Official index entry 061/2025, linked to Portaria ANEEL 6.981 of 30 June 2025.",
+      "toolsMentioned": [],
+      "reviewedDate": "2026-10-06",
+      "origin": "Reviewed research"
     }
   ]
 };
