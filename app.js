@@ -50,7 +50,33 @@ $('#map-nodes').innerHTML=records.length?nodes.join(''):'<div class="empty"><h3>
 function setPresentation(next){presentation=next;document.body.classList.toggle('map-mode',next==='map');$('#map-view').setAttribute('aria-pressed',next==='map');$('#cards-view').setAttribute('aria-pressed',next==='cards');if(next==='map'){focusedArea=null;showArea(null);drawMap();}}
 $('#map-view').onclick=()=>setPresentation('map');$('#cards-view').onclick=()=>setPresentation('cards');$('#zoom-in').onclick=()=>zoomMap(1.3);$('#zoom-out').onclick=()=>zoomMap(1/1.3);$('#map-fit').onclick=returnToOverview;$('#area-back').onclick=returnToOverview;
 $('#map-nodes').onclick=event=>{const n=event.target.closest('button');if(!n)return;if(n.dataset.kind==='root'){returnToOverview();return;}if(n.dataset.kind==='category'){focusArea(n.dataset.key);return;}const e=(view==='examples'?examples:view==='risks'?base.risks:base.usecases).find(e=>(e.id||e.title)===n.dataset.key);if(!e)return;$('#record-content').innerHTML=view==='examples'?card(e):`<article class="card"><p class="meta">${esc(view==='risks'?'Risks & Governance':e.category)}</p><h3>${esc(e.title)}</h3><p>${esc(e.description||e.why)}</p><div class="risk-box"><strong>${view==='risks'?'How the risk can be managed':'Key risk'}</strong>${esc(e.risk||e.action)}</div><p class="meta">Based on the research reviewed for this explorer.</p></article>`;const details=$('#record-content details');if(details)details.open=true;$('#record-dialog').showModal();};$('#record-close').onclick=()=>$('#record-dialog').close();
-let drag=null;$('#map-viewport').onpointerdown=event=>{if(event.target.closest('button'))return;drag={x:event.clientX,y:event.clientY,ox:mapX,oy:mapY};$('#map-viewport').setPointerCapture(event.pointerId);};$('#map-viewport').onpointermove=event=>{if(!drag)return;mapX=drag.ox+event.clientX-drag.x;mapY=drag.oy+event.clientY-drag.y;transformMap();};$('#map-viewport').onpointerup=$('#map-viewport').onpointercancel=()=>drag=null;$('#map-viewport').onkeydown=event=>{if(event.target.closest('button'))return;const moves={ArrowLeft:[50,0],ArrowRight:[-50,0],ArrowUp:[0,50],ArrowDown:[0,-50]};if(moves[event.key]){event.preventDefault();mapX+=moves[event.key][0];mapY+=moves[event.key][1];transformMap();}if(['+','=','-'].includes(event.key)){event.preventDefault();zoomMap(event.key==='-'?1/1.3:1.3);}};
+// Pan the map without starting native text selection.
+let drag = null;
+const mapViewport = $('#map-viewport');
+mapViewport.onpointerdown = event => {
+  if (!event.isPrimary || event.button !== 0 || event.target.closest('button')) return;
+  event.preventDefault();
+  const selection = window.getSelection();
+  if (selection?.anchorNode && mapViewport.contains(selection.anchorNode)) selection.removeAllRanges();
+  drag = { x: event.clientX, y: event.clientY, ox: mapX, oy: mapY, pointerId: event.pointerId };
+  mapViewport.classList.add('is-panning');
+  mapViewport.setPointerCapture(event.pointerId);
+};
+mapViewport.onpointermove = event => {
+  if (!drag || event.pointerId !== drag.pointerId) return;
+  mapX = drag.ox + event.clientX - drag.x;
+  mapY = drag.oy + event.clientY - drag.y;
+  transformMap();
+};
+function finishMapPan(event) {
+  if (!drag || event.pointerId !== drag.pointerId) return;
+  drag = null;
+  mapViewport.classList.remove('is-panning');
+  if (mapViewport.hasPointerCapture(event.pointerId)) mapViewport.releasePointerCapture(event.pointerId);
+}
+mapViewport.onpointerup = mapViewport.onpointercancel = mapViewport.onlostpointercapture = finishMapPan;
+mapViewport.addEventListener('selectstart', event => event.preventDefault());
+$('#map-viewport').onkeydown=event=>{if(event.target.closest('button'))return;const moves={ArrowLeft:[50,0],ArrowRight:[-50,0],ArrowUp:[0,50],ArrowDown:[0,-50]};if(moves[event.key]){event.preventDefault();mapX+=moves[event.key][0];mapY+=moves[event.key][1];transformMap();}if(['+','=','-'].includes(event.key)){event.preventDefault();zoomMap(event.key==='-'?1/1.3:1.3);}};
 $('#map-nodes').addEventListener('focusin',event=>{const b=event.target.closest('button');if(!b)return;const r=b.getBoundingClientRect(),v=$('#map-viewport').getBoundingClientRect();if(r.left<v.left||r.right>v.right||r.top<v.top||r.bottom>v.bottom){mapX+=(v.left+v.right-r.left-r.right)/2;mapY+=(v.top+v.bottom-r.top-r.bottom)/2;transformMap();}});
 window.addEventListener('resize',()=>{if(presentation==='map'){if(focusedArea)focusArea(focusedArea);else fitMap();}});
 $('#map-viewport').addEventListener('wheel',event=>{if(event.ctrlKey||event.metaKey)return;event.preventDefault();const rect=$('#map-viewport').getBoundingClientRect();const units=event.deltaMode===1?16:event.deltaMode===2?rect.height:1;const delta=Math.max(-160,Math.min(160,event.deltaY*units));zoomMap(Math.exp(-delta*.0025),{x:event.clientX-rect.left,y:event.clientY-rect.top});},{passive:false});
