@@ -372,7 +372,7 @@ window.EXPLORER_DATA = {
       "id": "example-196",
       "regulator": "California Energy Commission, USA",
       "tool": "EPIC: funding energy innovation",
-      "description": "Californiaâ€™s EPIC programme funds electricity research and demonstration, including AI-related projects. CECâ€™s 2024 annual report identifies Galileo as an AI-driven industrial decarbonisation project. EPIC is the wider funding programme, rather than a single AI service used by regulatory staff.",
+      "description": "California's EPIC programme funds electricity research and demonstration, including AI-related projects. CEC's 2024 annual report identifies Galileo as an AI-driven industrial decarbonisation project. EPIC is the wider funding programme, rather than a single AI service used by regulatory staff.",
       "usp": "Regulators and public bodies can support learning through funded trials and published evaluations. Useful funding conditions include comparison with existing methods and evidence that benefits reach consumers.",
       "category": "Innovation / Funding",
       "country": "USA",
