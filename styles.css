@@ -8,7 +8,7 @@
 /* RAP-inspired blue appearance; dark is the default. */
 :root{color-scheme:dark;--bg:#091b2b;--panel:#102a40;--control:#17374f;--hover:#234961;--soft:#183b54;--input:#0b2235;--text:#e5f1f8;--muted:#afc7d8;--border:#36566e;--dots:#29465b;--accent:#8ac8eb;--on-accent:#082339}
 :root[data-theme="light"]{color-scheme:light;--bg:#edf4f9;--panel:#ffffff;--control:#e7f1f8;--hover:#d4e8f5;--soft:#e0eff8;--input:#ffffff;--text:#16374e;--muted:#49677c;--border:#aac6d9;--dots:#bed3e2;--accent:#165c85;--on-accent:#ffffff}
-:root{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;color:var(--text);background:var(--bg);--navy:var(--accent);--teal:var(--accent);--line:var(--border)}
+:root{font-family:Gotham,Calibri,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--bg);--navy:var(--accent);--teal:var(--accent);--line:var(--border)}
 body,.map-mode{background:var(--bg)}
 header,.map-mode header{background:var(--panel);border-color:var(--border);border-top-color:var(--accent)}
 .brand>strong,h1,h2,h3,h4,.overview strong{color:var(--accent)}
@@ -426,3 +426,14 @@ a,summary{color:var(--accent)}a:hover{color:var(--accent)}
     display: none;
   }
 }
+
+/* Use locally available Gotham; fall back to a readable sans-serif face. */
+@font-face{font-family:Gotham;src:local("Gotham Book"),local("Gotham-Book"),local("Gotham");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Gotham;src:local("Gotham Medium"),local("Gotham-Medium");font-style:normal;font-weight:500 600;font-display:swap}
+@font-face{font-family:Gotham;src:local("Gotham Bold"),local("Gotham-Bold");font-style:normal;font-weight:700 900;font-display:swap}
+:root{font-family:Gotham,Calibri,"Segoe UI",Arial,sans-serif}
+/* Only the interactive map prevents selection. Policy and card text stays selectable. */
+#map-viewport,#map-viewport *{-webkit-user-select:none;user-select:none}
+#map-viewport{touch-action:none;cursor:grab}
+#map-viewport.is-panning{cursor:grabbing}
+#map-viewport button{cursor:pointer}
